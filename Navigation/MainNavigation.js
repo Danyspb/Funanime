@@ -1,31 +1,34 @@
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from "./Home";
-import Setting from "./Settings";
+import Home from "../Screens/Home";
+import Settings from "../Screens/Settings";
+import { createStackNavigator } from "@react-navigation/stack";
 
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
+const MainNavigation = () =>{
 
-const MainNavigation  = () =>{
-    return(
+    return (
+
         <Stack.Navigator>
-                <Stack.Screen name='Home' component={BottNavi}  options={{headerShown: false}}/>
-                <Stack.Screen name='Setting' component={Setting}/>  
+            <Stack.Screen name="Home" component={TabNavigation} />
+            <Stack.Screen name="Setting" component={Settings} />
         </Stack.Navigator>
     )
 }
 
-const BottNavi = () =>{
-    return (
-        <Tab.Navigator screenOptions={{headerTitle: ''}}>
-            <Tab.Screen name='Settings' component={Setting} />
-        </Tab.Navigator>
+const TabNavigation = () =>{
+    retun (
+        <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Home" component={Home} />
+                <Tab.Screen  name="Setting" component={Settings}/>
+            </Tab.Navigator>
+        </NavigationContainer>
     )
 }
-
-
 
 export default MainNavigation;
