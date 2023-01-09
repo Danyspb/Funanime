@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 
 
 
-const Profile = () =>{
+const Profile = (props) =>{
 
     return (
         <View style={styles.container}>

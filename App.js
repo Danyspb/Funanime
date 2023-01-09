@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native';
-import MainNavigation from './Navigation/MainNavigation';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import AppNavigation from './Navigation/AppNavigation';
+import 'react-native-gesture-handler'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <MainNavigation />
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <Text>Open up App.js to start working on your app!</Text>
+        <AppNavigation />
+      </SafeAreaView>
+    </SafeAreaProvider>
+
   );
 }
 
