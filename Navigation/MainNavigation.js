@@ -12,17 +12,16 @@ const Stack = createStackNavigator();
 const MainNavigation  = () =>{
     return(
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={BottNavi} />
-            <Stack.Screen name="Setting" component={Setting} />
+                <Stack.Screen name='Home' component={BottNavi}  options={{headerShown: false}}/>
+                <Stack.Screen name='Setting' component={Setting}/>  
         </Stack.Navigator>
     )
 }
 
 const BottNavi = () =>{
     return (
-        <Tab.Navigator>
-            <Tab.Screen name='Home' component={Home}/>
-            <Tab.Screen name='Setting' component={Setting} />
+        <Tab.Navigator screenOptions={{headerTitle: ''}}>
+            <Tab.Screen name='Settings' component={Setting} />
         </Tab.Navigator>
     )
 }
