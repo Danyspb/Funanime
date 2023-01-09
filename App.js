@@ -1,21 +1,12 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import AppNavigation from './Navigation/AppNavigation';
-import 'react-native-gesture-handler'
-import { SafeAreaProvider } from 'react-native-safe-area-context';
-
-
-
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <Text>Open up App.js to start working on your app!</Text>
-        <AppNavigation />
-      </SafeAreaView>
-    </SafeAreaProvider>
-
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
