@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import {StyleSheet, Text, View } from "react-native";
 
 
 
@@ -17,8 +17,8 @@ const Home = () =>{
 const styles = StyleSheet.create({
     container:{
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center'
         
     }
          
