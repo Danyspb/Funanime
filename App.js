@@ -1,28 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { Dimensions, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import 'react-native-gesture-handler'
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AppNavigation from './Navigation/AppNavigation';
 
 
 export default function App() {
   return (
-      <SafeAreaProvider style={styles.container}>
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
+          <View >
             <Text>
-              Hello 
-            </Text>
+                    Hello 
+              </Text>
             <AppNavigation />
+          </View>
+            
         </SafeAreaView>
-      </SafeAreaProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignContent: 'center',
-    justifyContent: 'center'
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#ffc2c2",
   },
 });
