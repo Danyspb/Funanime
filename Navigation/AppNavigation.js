@@ -13,7 +13,9 @@ const AppNavigation = () =>{
 }
 
 const styles = StyleSheet.create({
-
+    container: {
+       
+    }
 })
 
 export default AppNavigation;
