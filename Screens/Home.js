@@ -3,14 +3,12 @@ import {Button, StyleSheet, Text, View } from "react-native";
 
 
 
-
 const Home = (props) =>{
     return(
             <View style={styles.container}>
                 <Text style={styles.text}>
                     Welcome to my home page
                 </Text>
-                <Button title="go to Favoris"  onPress={()=>{props.navigation.navigate("Favoris")}}/>
             </View>
     )
 }

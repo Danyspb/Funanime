@@ -19,14 +19,15 @@ const Tab = createBottomTabNavigator();
 const BottomNav = () =>{
     return (
         <Tab.Navigator screenOptions={{
-            headerTitle: '',
+            
         }}>
             <Tab.Screen name="Home" component={Home} options={{
                 tabBarIcon: () =><Ionicons name="home" size={24} color="blue" />,
                 tabBarActiveBackgroundColor: "#E3ACF9",
                 headerStyle:{
                     backgroundColor: 'blue'
-                }
+                },
+
             }}/>
             <Tab.Screen name="Favoris" component={Favoris} options={{
                 tabBarIcon: ()=><Ionicons name="star" size={24} color="gold" />,
@@ -59,6 +60,16 @@ const MainNavigation = () =>{
     return (
         <Stack.Navigator>
             <Stack.Screen name="Acceuil" component={BottomNav} options={{
+                headerShown: false,
+                }} />
+            <Stack.Screen name="Favoris" component={Favoris} options={{
+                headerShown: false,
+                
+                }} />
+            <Stack.Screen name="Search" component={Search} options={{
+                headerShown: false,
+                }} />
+            <Stack.Screen name="Download" component={Download} options={{
                 headerShown: false,
                 }} />
         </Stack.Navigator>
