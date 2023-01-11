@@ -17,19 +17,23 @@ const Tab = createBottomTabNavigator();
 const BottomNav = () =>{
     return (
         <Tab.Navigator screenOptions={{
-            headerTitle: ''
+            headerTitle: '',
         }}>
             <Tab.Screen name="Home" component={Home} options={{
-                tabBarIcon: () =><Ionicons name="home" size={24} color="black" />
+                tabBarIcon: () =><Ionicons name="home" size={24} color="blue" />,
+                tabBarActiveBackgroundColor: "#E3ACF9",
             }}/>
             <Tab.Screen name="Favoris" component={Favoris} options={{
-                tabBarIcon: ()=><Ionicons name="star" size={24} color="black" />
+                tabBarIcon: ()=><Ionicons name="star" size={24} color="gold" />,
+                tabBarActiveBackgroundColor: "#E3ACF9",
             }} />
             <Tab.Screen name="Search" component={Search}  options={{
-                tabBarIcon: ()=><Ionicons name="search" size={24} color="black" />
+                tabBarIcon: ()=><Ionicons name="search" size={24} color="red" />,
+                tabBarActiveBackgroundColor: "#E3ACF9",
             }}/>
             <Tab.Screen name="Download" component={Download} options={{
-                tabBarIcon: ()=><Ionicons name="download" size={24} color="black" />
+                tabBarIcon: ()=><Ionicons name="download" size={24} color="purple" />,
+                tabBarActiveBackgroundColor: "#E3ACF9",
             }} />
         </Tab.Navigator>
     )
@@ -38,7 +42,10 @@ const BottomNav = () =>{
 const MainNavigation = () =>{
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Acceuil" component={BottomNav} options={{headerShown: false}} />
+            <Stack.Screen name="Acceuil" component={BottomNav} options={{
+                headerShown: false,
+
+                }} />
             <Stack.Screen name="Favoris" component={Favoris} options={{
                 headerTitle: "Favoris",
                
