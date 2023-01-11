@@ -14,6 +14,8 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
+
+
 const BottomNav = () =>{
     return (
         <Tab.Navigator screenOptions={{
@@ -31,7 +33,8 @@ const BottomNav = () =>{
                 tabBarActiveBackgroundColor: "#E3ACF9",
                 headerStyle:{
                     backgroundColor: 'gold'
-                }
+                },
+                
                 
             }} />
             <Tab.Screen name="Search" component={Search}  options={{
@@ -58,7 +61,6 @@ const MainNavigation = () =>{
             <Stack.Screen name="Acceuil" component={BottomNav} options={{
                 headerShown: false,
                 }} />
-            
         </Stack.Navigator>
     )
 }
