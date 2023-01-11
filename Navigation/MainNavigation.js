@@ -1,12 +1,15 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { StyleSheet } from "react-native";
 import Home from "../Screens/Home";
 import Favoris from "../Screens/Favoris";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Settings from "../Screens/Settings";
 import Search from "../Screens/Search";
 import Download from "../Screens/Download";
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+
+
 
 
 
@@ -15,13 +18,23 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
-const bottomNav = () =>{
+const BottomNav = () =>{
     return (
-        <Tab.Navigator>
-            <Tab.Screen name="Acceuil" component={Home} />
-            <Tab.Screen name="Favoris" component={Favoris} />
-            <Tab.Screen name="Search" component={Search={}} />
-            <Tab.Screen name="Download" component={Download} />
+        <Tab.Navigator screenOptions={{
+            headerTitle: ''
+        }}>
+            <Tab.Screen name="Home" component={Home} options={{
+                tabBarIcon: () =><Ionicons name="home" size={24} color="black" />
+            }}/>
+            <Tab.Screen name="Favoris" component={Favoris} options={{
+                tabBarIcon: ()=><MaterialIcons name="favorite" size={24} color="black" />
+            }} />
+            <Tab.Screen name="Search" component={Search}  options={{
+                tabBarIcon: ()=><Ionicons name="search" size={24} color="black" />
+            }}/>
+            <Tab.Screen name="Download" component={Download} options={{
+                tabBarIcon: ()=><Ionicons name="download" size={24} color="black" />
+            }} />
         </Tab.Navigator>
     )
 }
@@ -29,20 +42,17 @@ const bottomNav = () =>{
 const MainNavigation = () =>{
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={bottomNav} />
+            <Stack.Screen name="Acceuil" component={BottomNav} options={{headerShown: false}} />
             <Stack.Screen name="Favoris" component={Favoris} options={{
                 headerTitle: "Favoris",
-                headerBackTitle: "Retour"
-
-
+               
             }} />
         </Stack.Navigator>
     )
 }
 
 const styles = StyleSheet.create({
-
-
+    
 })
 
 export default MainNavigation;
