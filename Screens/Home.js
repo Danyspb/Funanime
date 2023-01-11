@@ -1,20 +1,21 @@
 import React from "react";
-import {StyleSheet, Text, View } from "react-native";
+import {Button, StyleSheet, Text, View } from "react-native";
 
 
 
 
-const Home = () =>{
+const Home = (props) =>{
     return(
             <View style={styles.container}>
                 <Text>
                     Welcome to my home page
                 </Text>
+                <Button title="go to Favoris"  onPress={()=>{props.navigation.navigate("Favoris")}}/>
             </View>
     )
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
     container:{
         flex: 1,
         justifyContent: 'center',

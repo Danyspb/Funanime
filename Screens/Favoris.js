@@ -1,13 +1,13 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 
 
-const Profil = () =>{
+const Favoris = (props) =>{
     return(
         <View style={styles.container}>
             <Text>
-                Welcome to my profil page
+                Welcome to my Favoris page
             </Text>
         </View>
     )
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Profil;
+export default Favoris;

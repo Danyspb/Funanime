@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Settings = () =>{
+const Settings = (props) =>{
 
     return (
         <View>
