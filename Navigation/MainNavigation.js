@@ -7,10 +7,6 @@ import Favoris from "../Screens/Favoris";
 import Search from "../Screens/Search";
 import Download from "../Screens/Download";
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-
-
-
 
 
 
@@ -27,7 +23,7 @@ const BottomNav = () =>{
                 tabBarIcon: () =><Ionicons name="home" size={24} color="black" />
             }}/>
             <Tab.Screen name="Favoris" component={Favoris} options={{
-                tabBarIcon: ()=><MaterialIcons name="favorite" size={24} color="black" />
+                tabBarIcon: ()=><Ionicons name="star" size={24} color="black" />
             }} />
             <Tab.Screen name="Search" component={Search}  options={{
                 tabBarIcon: ()=><Ionicons name="search" size={24} color="black" />
