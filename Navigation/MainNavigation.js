@@ -25,7 +25,8 @@ const BottomNav = () =>{
                 tabBarIcon: () =><Ionicons name="home" size={24} color="blue" />,
                 tabBarActiveBackgroundColor: "#E3ACF9",
                 headerStyle:{
-                    backgroundColor: 'blue'
+                    backgroundColor: 'blue',
+                
                 },
 
             }}/>

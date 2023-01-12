@@ -1,14 +1,17 @@
 import React from "react";
-import {Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import Films from "../data/Films";
+
 
 
 
 const Home = (props) =>{
+
+    
+
     return(
             <View style={styles.container}>
-                <Text style={styles.text}>
-                    Welcome to my home page
-                </Text>
+                <Films />
             </View>
     )
 }
