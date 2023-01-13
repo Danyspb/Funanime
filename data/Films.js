@@ -1,6 +1,6 @@
 import react, { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 let url = "https://gogoanime.consumet.org/anime-movies";
@@ -28,13 +28,27 @@ const Films = (props)=>{
         
     }, []);
 
+    const Item = ({title}) => (
+        <View >
+          <Text>{title}</Text>
+        </View>
+    )
+
     const getContent = () =>{
         if(isloading){
             return <ActivityIndicator  size={"large"}/>
         }
         console.log(response);
-        return <Text>ok ca marche</Text>
-        
+        return (
+            <SafeAreaView style={styles.container}>
+            <FlatList
+              data={response}
+              renderItem={({item}) => 
+              <Item title={item.animeTitle} />}
+              keyExtractor={item => item.animeId}
+            />
+          </SafeAreaView>
+        ); 
     }
 
 
