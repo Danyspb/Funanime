@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FilmsDesign from "../Design/FilmsDesign";
+
+
 
 
 let url = "https://gogoanime.consumet.org/anime-movies";
@@ -29,7 +30,17 @@ const Films = ()=>{
         
     }, []);
 
-
+    const FilmDesign = ({animeId, animeTitle, animeImg, animeUrl , releasedDate}) =>{
+      return (
+        <View>
+          <Text>{animeId}</Text>
+          <Text>{animeTitle}</Text>
+          <Text>{animeImg}</Text>
+          <Text>{animeUrl}</Text>
+          <Text>{releasedDate}</Text>
+        </View>
+      )
+    }
   
 
     const getContent = () =>{
@@ -42,8 +53,9 @@ const Films = ()=>{
               <FlatList
                 data={response}
                 renderItem={({item}) => 
-                <FilmsDesign key={item.animeTitle} item={item} /> }
-                keyExtractor={item => item.id}
+                <FilmDesign key={item.animeId}  animeTitle={item.animeTitle}/>
+                }
+                keyExtractor={item => item.animeId}
               />
             </SafeAreaView>
           );
