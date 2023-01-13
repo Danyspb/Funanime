@@ -6,13 +6,13 @@ import Films from "../data/Films";
 
 
 
+
 const Home = (props) =>{
     
-   
 
     return(
             <View style={styles.container}>
-                <Films /> 
+                <Films />
             </View>
     )
 }
