@@ -1,6 +1,7 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import Films from "../data/Films";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
+import FilmsDesign from "../Design/FilmsDesign";
+
 
 
 
@@ -8,12 +9,15 @@ import Films from "../data/Films";
 
 
 const Home = (props) =>{
-    
-
+    const {item} = props;
+    console.log({item});
     return(
+        <TouchableOpacity>
             <View style={styles.container}>
-                <Films />
+                <FilmsDesign 
+                {...item} />
             </View>
+        </TouchableOpacity>   
     )
 }
 
