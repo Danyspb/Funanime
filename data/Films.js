@@ -1,5 +1,5 @@
 import react, { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -7,7 +7,7 @@ let url = "https://gogoanime.consumet.org/anime-movies";
 
 
 
-const Films = (props)=>{
+const Films = ()=>{
     let [isloading, setIsLoading] = useState(true);
     let [error, setError] = useState();
     let [response, setResponse] = useState();
@@ -28,27 +28,30 @@ const Films = (props)=>{
         
     }, []);
 
-    const Item = ({title}) => (
+
+    const Item = ({url}) => (
         <View >
-          <Text>{title}</Text>
+            <Text>
+                {url}
+            </Text>
         </View>
-    )
+      );
+
 
     const getContent = () =>{
         if(isloading){
             return <ActivityIndicator  size={"large"}/>
         }
-        console.log(response);
+        
         return (
             <SafeAreaView style={styles.container}>
-            <FlatList
-              data={response}
-              renderItem={({item}) => 
-              <Item title={item.animeTitle} />}
-              keyExtractor={item => item.animeId}
-            />
-          </SafeAreaView>
-        ); 
+              <FlatList
+                data={response}
+                renderItem={({item}) => <Item url={item.animeUrl} />}
+                keyExtractor={item => item.animeId}
+              />
+            </SafeAreaView>
+          );
     }
 
 
