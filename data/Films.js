@@ -37,7 +37,7 @@ const Films = ()=>{
                 +'...': animeTitle}</Text>
           <Text style={styles.cardDate}>{releasedDate}</Text>
           <Image 
-            source={{uri: `${animeImg}`}}
+            source={{uri: animeImg.toString()}}
           />
         </View>
       )
