@@ -33,7 +33,12 @@ const Films = ()=>{
     const FilmDesign = ({animeId, animeTitle, animeImg, animeUrl , releasedDate}) =>{
       return (
         <View style={styles.card}>
-          <Text>{animeTitle}</Text>
+          <Text style={styles.cardTitle}>{animeTitle.lenght > 10 ? animeTitle.substring(0, 10 - 3) 
+                +'...': animeTitle}</Text>
+          <Text style={styles.cardDate}>{releasedDate}</Text>
+          <Image 
+            source={{uri: `${animeImg}`}}
+          />
         </View>
       )
     }
@@ -52,6 +57,9 @@ const Films = ()=>{
                 renderItem={({item}) => 
                 <FilmDesign key={item.animeId}  
                 animeTitle={item.animeTitle}
+                releasedDate={item.releasedDate}
+                animeImg={item.animeImg}
+                animeUrl={item.animeUrl}
                                            />
                 }
                 keyExtractor={item => item.animeId}
@@ -75,11 +83,20 @@ const styles = StyleSheet.create({
       width: 390,
       borderColor: 'red',
       borderWidth: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
       marginRight: 10,
       marginLeft: 10,
       borderRadius: 20,
+    },
+    cardTitle:{
+      fontSize: 16,
+      marginLeft: 25,
+      marginTop: 180,
+      fontWeight: 'bold',
+    },
+    cardDate:{
+      marginLeft: 25,
+      paddingTop: 5,
+      fontSize: 16
 
     }
 })
