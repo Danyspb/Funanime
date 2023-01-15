@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -32,14 +32,19 @@ const Films = ()=>{
 
     const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
-        <View style={styles.card}>
-          <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
-                +'...': title}</Text>
-          <Text style={styles.cardDate}>{date}</Text>
+        <View>
+          <View style={styles.card}>
           <Image 
+            style={styles.cardPic}
             source={{uri: picture}}
           />
         </View>
+          <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
+                +'...': title}</Text>
+          <Text style={styles.cardDate}>{date}</Text>
+        </View>
+        
+        
       )
     }
   
@@ -59,8 +64,7 @@ const Films = ()=>{
                 title={item.animeTitle}
                 date={item.releasedDate}
                 picture={item.animeImg}
-                link={item.animeUrl}
-                                           />
+                link={item.animeUrl} />
                 }
                 keyExtractor={item => item.animeId}
               />
@@ -98,6 +102,13 @@ const styles = StyleSheet.create({
       paddingTop: 5,
       fontSize: 16
 
+    },
+    cardPic:{
+      height: '100%',
+      width: '40%',
+      borderRadius: 20,
+      alignItems:'center',
+      justifyContent: 'center'
     }
 })
 
