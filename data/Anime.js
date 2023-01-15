@@ -3,11 +3,11 @@ import { StyleSheet, View } from "react-native";
 
 const Anime = () =>{
 
-    return(){
+    return(
         <View>
 
         </View>
-    }
+    )
 }
 
 const styles = StyleSheet.create({

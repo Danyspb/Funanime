@@ -30,14 +30,14 @@ const Films = ()=>{
         
     }, []);
 
-    const FilmDesign = ({animeId, animeTitle, animeImg, animeUrl , releasedDate}) =>{
+    const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
         <View style={styles.card}>
-          <Text style={styles.cardTitle}>{animeTitle.lenght > 10 ? animeTitle.substring(0, 10 - 3) 
-                +'...': animeTitle}</Text>
-          <Text style={styles.cardDate}>{releasedDate}</Text>
+          <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
+                +'...': title}</Text>
+          <Text style={styles.cardDate}>{date}</Text>
           <Image 
-            source={{uri: animeImg.toString()}}
+            source={{uri: picture}}
           />
         </View>
       )
@@ -56,10 +56,10 @@ const Films = ()=>{
                 data={response}
                 renderItem={({item}) => 
                 <FilmDesign key={item.animeId}  
-                animeTitle={item.animeTitle}
-                releasedDate={item.releasedDate}
-                animeImg={item.animeImg}
-                animeUrl={item.animeUrl}
+                title={item.animeTitle}
+                date={item.releasedDate}
+                picture={item.animeImg}
+                link={item.animeUrl}
                                            />
                 }
                 keyExtractor={item => item.animeId}
