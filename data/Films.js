@@ -32,7 +32,7 @@ const Films = ()=>{
 
     const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
-        <View style={{backgroundColor: 'red'}}>
+        <View style={styles.container}>
             <View style={styles.card}>
                 <Image 
                   style={styles.cardPic}
@@ -94,7 +94,9 @@ const styles = StyleSheet.create({
       borderRadius: 20,
     },
     cardTitle:{
-      marginTop: -150
+      marginTop: -150,
+      fontWeight: 'bold',
+      fontSize: 15
     },
     cardDate:{
       marginTop: -50
@@ -107,9 +109,10 @@ const styles = StyleSheet.create({
       justifyContent: 'center'
     },
     cardInfo:{
-      backgroundColor: 'blue',
       marginLeft: 210,
-    }
+    },
+    
+
 })
 
 export default Films;

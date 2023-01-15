@@ -3,14 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Films from "../Data/Films";
 
 
-
-
-
-
 const Home = () =>{
 
     return(
-        <View >
+        <View style={styles.container}>
             <Films />
         </View>
     )
