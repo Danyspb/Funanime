@@ -10,11 +10,9 @@ import Films from "../Data/Films";
 const Home = () =>{
 
     return(
-        <TouchableOpacity style={styles.container}>
-            <View >
-                <Films />
-            </View>
-        </TouchableOpacity>   
+        <View >
+            <Films />
+        </View>
     )
 }
 

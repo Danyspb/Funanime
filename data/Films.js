@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -32,12 +32,8 @@ const Films = ()=>{
 
     const FilmDesign = ({animeId, animeTitle, animeImg, animeUrl , releasedDate}) =>{
       return (
-        <View>
-          <Text>{animeId}</Text>
+        <View style={styles.card}>
           <Text>{animeTitle}</Text>
-          <Text>{animeImg}</Text>
-          <Text>{animeUrl}</Text>
-          <Text>{releasedDate}</Text>
         </View>
       )
     }
@@ -51,9 +47,12 @@ const Films = ()=>{
         return (
             <SafeAreaView style={styles.container}>
               <FlatList
+                horizontal
                 data={response}
                 renderItem={({item}) => 
-                <FilmDesign key={item.animeId}  animeTitle={item.animeTitle}/>
+                <FilmDesign key={item.animeId}  
+                animeTitle={item.animeTitle}
+                                           />
                 }
                 keyExtractor={item => item.animeId}
               />
@@ -63,14 +62,26 @@ const Films = ()=>{
 
 
     return (
-       <SafeAreaView>
+      <View>
         {getContent()}
-       </SafeAreaView>
+      </View>
     )
 }
 
 const styles = StyleSheet.create({
+    card: {
+      backgroundColor: 'gainsboro',
+      height: 250,
+      width: 390,
+      borderColor: 'red',
+      borderWidth: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginRight: 10,
+      marginLeft: 10,
+      borderRadius: 20,
 
+    }
 })
 
 export default Films;
