@@ -32,16 +32,18 @@ const Films = ()=>{
 
     const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
-        <View>
-          <View style={styles.card}>
-          <Image 
-            style={styles.cardPic}
-            source={{uri: picture}}
-          />
-        </View>
-          <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
-                +'...': title}</Text>
-          <Text style={styles.cardDate}>{date}</Text>
+        <View style={{backgroundColor: 'red'}}>
+            <View style={styles.card}>
+                <Image 
+                  style={styles.cardPic}
+                  source={{uri: picture}}
+                />
+            </View>
+            <View style={styles.cardInfo}>
+                <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
+                    +'...': title}</Text>
+                <Text style={styles.cardDate}>Released: {date}</Text>
+            </View>
         </View>
         
         
@@ -92,23 +94,21 @@ const styles = StyleSheet.create({
       borderRadius: 20,
     },
     cardTitle:{
-      fontSize: 16,
-      marginLeft: 25,
-      marginTop: 180,
-      fontWeight: 'bold',
+      marginTop: -150
     },
     cardDate:{
-      marginLeft: 25,
-      paddingTop: 5,
-      fontSize: 16
-
+      marginTop: -50
     },
     cardPic:{
       height: '100%',
-      width: '40%',
+      width: '50%',
       borderRadius: 20,
       alignItems:'center',
       justifyContent: 'center'
+    },
+    cardInfo:{
+      backgroundColor: 'blue',
+      marginLeft: 210,
     }
 })
 
