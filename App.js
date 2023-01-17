@@ -1,18 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { Dimensions, StyleSheet, Text, View} from 'react-native';
+
+import { StyleSheet, Text, View} from 'react-native';
 import 'react-native-gesture-handler'
 import AppNavigation from './Navigation/AppNavigation';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider} from 'react-native-safe-area-context';
 
 
 export default function App() {
   return (
     <SafeAreaProvider style={styles.container}>
-      
-            <AppNavigation />
-      
+        <AppNavigation />
     </SafeAreaProvider>
-        
   );
 }
 
