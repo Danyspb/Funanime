@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import FilmDesign from "../Design/FilmDesign";
+import Films from "../Data/Films";
+import PopularAnime from "../Data/PopularAnime";
 
 
 
@@ -8,7 +9,8 @@ const Home = () =>{
 
     return(
         <View style={styles.container}>
-            <FilmDesign />
+           <Films /> 
+           <PopularAnime />
         </View>
     )
 }
