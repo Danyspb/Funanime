@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -31,20 +31,21 @@ const Films = ()=>{
 
     const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
-        <View style={styles.container}>
-            <View style={styles.card}>
-                <Image 
-                  style={styles.cardPic}
-                  source={{uri: picture}}
-                />
-            </View>
-            <View style={styles.cardInfo}>
-                <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
-                    +'...': title}</Text>
-                <Text style={styles.cardDate}>Released: {date}</Text>
-            </View>
-        </View>
-        
+        <TouchableOpacity>
+          <View style={styles.container}>
+              <View style={styles.card}>
+                  <Image 
+                    style={styles.cardPic}
+                    source={{uri: picture}}
+                  />
+              </View>
+              <View style={styles.cardInfo}>
+                  <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
+                      +'...': title}</Text>
+                  <Text style={styles.cardDate}>Released: {date}</Text>
+              </View>
+          </View>
+        </TouchableOpacity>
         
       )
     }

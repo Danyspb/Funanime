@@ -11,9 +11,9 @@ const Home = () =>{
         <View style={styles.container}>
          <ScrollView>
             <Films /> 
-           <View>
-           <PopularAnime /> 
-           </View>
+            <View>
+            <PopularAnime /> 
+            </View>
          </ScrollView>
            
         </View>

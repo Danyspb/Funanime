@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -27,11 +27,16 @@ const PopularAnime = () =>{
     }, []);
 
 
-    const AnimeDesign = ({title}) =>{
+    const AnimeDesign = ({id,title,picture, link}) =>{
         return(
-            <View style={styles.card}>
-                <Text>{title}</Text>
-            </View>
+            <TouchableOpacity>
+                <View style={styles.card}>
+                    <Image style={styles.cardPic}
+                    source={{uri: picture}}
+                    />
+
+                </View>
+            </TouchableOpacity>
         )
 
     }
@@ -43,11 +48,15 @@ const PopularAnime = () =>{
         return(
             <SafeAreaView style={styles.container}>
               <FlatList 
-                numColumns={2}
+                numColumns={3}
                 data={response}
                 renderItem={({item}) => 
                 <AnimeDesign key={item.animeId}
-                title={item.animeTitle} />
+                id={item.animeId}
+                picture={item.animeImg}
+                link={item.animeUrl}
+                title={item.animeTitle}
+                 />
                 }
                 keyExtractor={item => item.animeId}
               />
@@ -68,11 +77,18 @@ const PopularAnime = () =>{
 const styles = StyleSheet.create({
     card:{
         backgroundColor: 'pink',
+        width: 125,
+        height: 170,
         borderColor: 'yellow',
-        height: 250,
-        width: 180,
+        borderRadius: 10,
         borderWidth: 1,
-        margin: 5
+        margin: 6
+    },
+    cardPic:{
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+        borderRadius: 11,
 
     }
 })
