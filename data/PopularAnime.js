@@ -29,7 +29,7 @@ const PopularAnime = () =>{
 
     const AnimeDesign = ({title}) =>{
         return(
-            <View>
+            <View style={styles.card}>
                 <Text>{title}</Text>
             </View>
         )
@@ -42,8 +42,7 @@ const PopularAnime = () =>{
         }
         return(
             <SafeAreaView style={styles.container}>
-              <FlatList
-                horizontal
+              <FlatList 
                 data={response}
                 renderItem={({item}) => 
                 <AnimeDesign key={item.animeId}
@@ -54,7 +53,6 @@ const PopularAnime = () =>{
             </SafeAreaView>
         )
     }
-
 
     return(
 
@@ -67,7 +65,15 @@ const PopularAnime = () =>{
 }
 
 const styles = StyleSheet.create({
+    card:{
+        backgroundColor: 'pink',
+        borderColor: 'yellow',
+        height: 250,
+        width: 180,
+        borderWidth: 1,
+        margin: 5
 
+    }
 })
 
 export default PopularAnime;
