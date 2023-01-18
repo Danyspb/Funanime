@@ -43,6 +43,7 @@ const PopularAnime = () =>{
         return(
             <SafeAreaView style={styles.container}>
               <FlatList 
+                numColumns={2}
                 data={response}
                 renderItem={({item}) => 
                 <AnimeDesign key={item.animeId}
