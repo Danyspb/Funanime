@@ -3,9 +3,7 @@ import { ActivityIndicator, FlatList, Image, StyleSheet, Text, TouchableOpacity,
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-
 let url = "https://gogoanime.consumet.org/anime-movies";
-
 
 
 const Films = ()=>{
@@ -56,6 +54,7 @@ const Films = ()=>{
         }
         
         return (
+
             <SafeAreaView style={styles.container}>
               <FlatList
                 horizontal
@@ -110,8 +109,6 @@ const styles = StyleSheet.create({
     cardInfo:{
       marginLeft: 210,
     },
-    
-
 })
 
 export default Films;

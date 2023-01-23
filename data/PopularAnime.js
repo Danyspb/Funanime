@@ -34,7 +34,11 @@ const PopularAnime = () =>{
                     <Image style={styles.cardPic}
                     source={{uri: picture}}
                     />
-
+                    <View>
+                        <Text style={styles.titre}>
+                            {title}
+                        </Text>
+                    </View>
                 </View>
             </TouchableOpacity>
         )
@@ -82,7 +86,8 @@ const styles = StyleSheet.create({
         borderColor: 'yellow',
         borderRadius: 10,
         borderWidth: 1,
-        margin: 6
+        margin: 6,
+        marginBottom: 50
     },
     cardPic:{
         alignItems: 'center',
@@ -90,6 +95,11 @@ const styles = StyleSheet.create({
         height: '100%',
         borderRadius: 11,
 
+    },
+    titre:{
+        color: 'white',
+        marginTop: 5,
+        marginBottom: 120,
     }
 })
 

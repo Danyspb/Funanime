@@ -9,13 +9,13 @@ const Home = () =>{
 
     return(
         <View style={styles.container}>
-         <ScrollView>
+         <ScrollView >
             <Films /> 
             <View>
             <PopularAnime /> 
             </View>
          </ScrollView>
-           
+
         </View>
     )
 }
