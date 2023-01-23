@@ -36,19 +36,23 @@ const PopularAnime = () =>{
                     />
                     <View>
                         <Text style={styles.titre}>
-                            {title}
+                            {
+                                title.slice(0,25)+' ...'
+                            }
                         </Text>
                     </View>
                 </View>
             </TouchableOpacity>
         )
 
+        
     }
 
     const getAnimePop = () =>{
         if(isloading){
             <ActivityIndicator size={'large'} />
         }
+        
         return(
             <SafeAreaView style={styles.container}>
               <FlatList 
@@ -98,8 +102,9 @@ const styles = StyleSheet.create({
     },
     titre:{
         color: 'white',
-        marginTop: 5,
-        marginBottom: 120,
+        marginTop: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 })
 

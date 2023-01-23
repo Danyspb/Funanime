@@ -38,8 +38,10 @@ const Films = ()=>{
                   />
               </View>
               <View style={styles.cardInfo}>
-                  <Text style={styles.cardTitle}>{title.lenght > 10 ? title.substring(0, 10 - 3) 
-                      +'...': title}</Text>
+                  <Text style={styles.cardTitle}>
+                    {
+                        title.slice(0,21)+' ...'
+                    }</Text>
                   <Text style={styles.cardDate}>Released: {date}</Text>
               </View>
           </View>
