@@ -10,6 +10,7 @@ const PopularAnime = () =>{
     let [isloading, setIsloading] = useState(true);
     let [error, setError] = useState();
     let [response, setResponse] = useState();
+    let [setSelection, Selection] = useState();
 
     useEffect(()=>{
         fetch(url)
@@ -29,11 +30,13 @@ const PopularAnime = () =>{
 
     const AnimeDesign = ({id,title,picture, link}) =>{
         return(
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=> console.log(setSelection(link))}>
                 <View style={styles.card}>
-                    <Image style={styles.cardPic}
-                    source={{uri: picture}}
-                    />
+                    <View >
+                        <Image style={styles.cardPic}
+                        source={{uri: picture}}
+                        />
+                    </View>
                     <View>
                         <Text style={styles.titre}>
                             {
@@ -58,6 +61,7 @@ const PopularAnime = () =>{
               <FlatList 
                 numColumns={3}
                 data={response}
+                extraData={Selection}
                 renderItem={({item}) => 
                 <AnimeDesign key={item.animeId}
                 id={item.animeId}
