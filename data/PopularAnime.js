@@ -27,10 +27,10 @@ const PopularAnime = () =>{
           )
     }, []);
 
-
     const AnimeDesign = ({id,title,picture, link}) =>{
+         
         return(
-            <TouchableOpacity onPress={()=> console.log(setSelection(link))}>
+            <TouchableOpacity >
                 <View style={styles.card}>
                     <View >
                         <Image style={styles.cardPic}
@@ -40,7 +40,7 @@ const PopularAnime = () =>{
                     <View>
                         <Text style={styles.titre}>
                             {
-                                title.slice(0,25)+' ...'
+                                 title ? (title.length > 30 ? title.slice(0, 25) + "..." : title) : true
                             }
                         </Text>
                     </View>

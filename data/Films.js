@@ -40,8 +40,9 @@ const Films = ()=>{
               <View style={styles.cardInfo}>
                   <Text style={styles.cardTitle}>
                     {
-                        title.slice(0,21)+' ...'
-                    }</Text>
+                       title ? (title.length > 20 ? title.slice(0, 22) + "..." : title) : true
+                    }
+                    </Text>
                   <Text style={styles.cardDate}>Released: {date}</Text>
               </View>
           </View>
