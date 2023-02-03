@@ -11,11 +11,9 @@ const Home = () =>{
         <View style={styles.container}>
          <ScrollView >
             <View>
-                
                 <Films />
             </View>
             <View>
-                <Text style={styles.labelAnime}>Popular Anime</Text>
                 <PopularAnime /> 
             </View>
          </ScrollView>
@@ -33,16 +31,8 @@ const styles = StyleSheet.create({
     },
     text:{
         color: '#F0E9D2'
-    },
-    labelAnime: {
-        color: 'white',
-        marginTop: 20,
-        marginBottom: -15,
-        paddingLeft: 20,
-        fontWeight: 'bold',
-        fontSize: 25,
-    },
-   
+    }
+
 })
 
 export default Home;

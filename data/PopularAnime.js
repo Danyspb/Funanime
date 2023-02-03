@@ -55,7 +55,8 @@ const PopularAnime = () =>{
         }
         
         return(
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView>
+                <Text style={styles.labelAnime}>Popular Anime</Text>
               <FlatList 
                 numColumns={3}
                 data={response}
@@ -107,7 +108,15 @@ const styles = StyleSheet.create({
         marginTop: 10,
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
+    labelAnime: {
+        color: 'white',
+        marginTop: -30,
+        marginBottom: 15,
+        paddingLeft: 20,
+        fontWeight: 'bold',
+        fontSize: 25,
+    },
 })
 
 export default PopularAnime;
