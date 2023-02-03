@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, Image, StyleSheet, Text, TouchableOpacity,
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-let url = 'https://gogoanime.consumet.org/popular';
+let url = 'https://gogoanime.consumet.stream/popular';
 
 const PopularAnime = () =>{
 
@@ -40,15 +40,13 @@ const PopularAnime = () =>{
                     <View>
                         <Text style={styles.titre}>
                             {
-                                 title ? (title.length > 30 ? title.slice(0, 25) + "..." : title) : true
+                                title ? (title.length > 30 ? title.slice(0, 25) + "..." : title) : true
                             }
                         </Text>
                     </View>
                 </View>
             </TouchableOpacity>
-        )
-
-        
+        )        
     }
 
     const getAnimePop = () =>{

@@ -11,7 +11,7 @@ const Home = () =>{
         <View style={styles.container}>
          <ScrollView >
             <View>
-                <Text style={styles.labelMovie}>Anime Movies</Text>
+                
                 <Films />
             </View>
             <View>
@@ -42,14 +42,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 25,
     },
-    labelMovie: {
-        color: 'white',
-        paddingLeft: 20,
-        fontWeight: 'bold',
-        fontSize: 25,
-        marginTop: 15,
-        marginBottom: -20
-    }
+   
 })
 
 export default Home;
