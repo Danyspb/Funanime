@@ -51,7 +51,7 @@ const Films = ()=>{
       )
     }
     
-    const getContent = () =>{
+    const getFilm = () =>{
         if(isloading){
             return <ActivityIndicator  
             size={"large"}/>
@@ -79,7 +79,7 @@ const Films = ()=>{
 
     return (
       <View>
-        {getContent()}
+        {getFilm()}
       </View>
     )
 }

@@ -57,8 +57,9 @@ const PopularAnime = () =>{
         return(
             <SafeAreaView>
                 <Text style={styles.labelAnime}>Popular Anime</Text>
-              <FlatList 
-                numColumns={3}
+              <FlatList
+                horizontal
+                pagingEnabled
                 data={response}
                 extraData={Selection}
                 renderItem={({item}) => 

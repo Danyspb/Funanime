@@ -18,7 +18,7 @@ const Home = () =>{
                 <PopularAnime /> 
             </View>
             <View>
-                <RecentAnimes /> 
+                
             </View>
 
          </ScrollView>
