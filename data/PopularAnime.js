@@ -10,7 +10,7 @@ const PopularAnime = () =>{
     let [isloading, setIsloading] = useState(true);
     let [error, setError] = useState();
     let [response, setResponse] = useState();
-    let [setSelection, Selection] = useState();
+    
 
     useEffect(()=>{
         fetch(url)
@@ -50,6 +50,7 @@ const PopularAnime = () =>{
     }
 
     const getAnimePop = () =>{
+
         if(isloading){
             <ActivityIndicator size={'large'} />
         }
@@ -61,7 +62,6 @@ const PopularAnime = () =>{
                 horizontal
                 pagingEnabled
                 data={response}
-                extraData={Selection}
                 renderItem={({item}) => 
                 <AnimeDesign key={item.animeId}
                 id={item.animeId}

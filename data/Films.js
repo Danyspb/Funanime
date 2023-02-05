@@ -30,7 +30,7 @@ const Films = ()=>{
     const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
         <TouchableOpacity>
-          <View style={styles.container}>
+          <View >
               <View style={styles.card}>
                   <Image 
                     style={styles.cardPic}
@@ -79,7 +79,7 @@ const Films = ()=>{
 
     return (
       <View>
-        {getFilm()}
+          {getFilm()}
       </View>
     )
 }
