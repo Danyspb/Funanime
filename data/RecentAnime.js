@@ -1,5 +1,5 @@
 import react, { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
@@ -10,7 +10,6 @@ const url = 'https://gogoanime.consumet.stream/recent-release';
 
 const RecentAnime = () =>{
 
-    
     let [isloading, setIsloading] = useState(true);
     let [error, setError] = useState();
     let [response, setResponse] = useState();
@@ -31,11 +30,27 @@ const RecentAnime = () =>{
     }, []);
 
 
-    const NouvAnimme = () =>{
-        return(
-            <View>
+    const NouvAnimme = ({title, picture, link, episode, type }) =>{
 
-            </View>
+        return(
+
+            <TouchableOpacity >
+                <View style={styles.card}>
+                    <View >
+                        <Image style={styles.cardPic}
+                        source={{uri: picture}}
+                        />
+                    </View>
+                    <View>
+                        <Text style={styles.titre}>
+                            {
+                                title ? (title.length > 30 ? title.slice(0, 25) + "..." : title) : true
+                            }
+                        </Text>
+                    </View>
+                </View>
+            </TouchableOpacity>
+
         )
     }
 
@@ -44,15 +59,19 @@ const RecentAnime = () =>{
             <ActivityIndicator
              size={'large'} />
         }
-
-        console.log(response);
         return(
 
             <SafeAreaView>
-                <FlatList 
+                <FlatList
+                numColumns={3}
                 data={response}
                 renderItem={({item})=>
-                <NouvAnimme 
+                <NouvAnimme key={item.animeId}
+                title={item.animeTitle}
+                picture={item.animeImg}
+                episode={item.episodeNum}
+                type={item.subOrDub}
+                link={item.episodeUrl}
                 />}
                 />
             </SafeAreaView>
@@ -69,6 +88,41 @@ const RecentAnime = () =>{
 }
 
 const styles = StyleSheet.create({
+    card:{
+        backgroundColor: 'pink',
+        width: 125,
+        height: 170,
+        borderColor: 'yellow',
+        borderRadius: 10,
+        borderWidth: 1,
+        margin: 6,
+        marginBottom: 50
+    },
+    cardPic:{
+        alignItems: 'center',
+        width: '100%',
+        height: '100%',
+        borderRadius: 11,
 
+    },
+    titre:{
+        color: 'white',
+        marginTop: 10,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    labelAnime: {
+        color: 'white',
+        marginTop: -30,
+        marginBottom: 15,
+        paddingLeft: 20,
+        fontWeight: 'bold',
+        fontSize: 25,
+    },
+    textLabel:{
+        color: 'white',
+        fontWeight: 'bold',
+
+    }
 })
 export default RecentAnime;
