@@ -1,12 +1,9 @@
-import react, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-
-
 const url = 'https://gogoanime.consumet.stream/recent-release';
-
 
 const RecentAnime = () =>{
 
@@ -62,6 +59,7 @@ const RecentAnime = () =>{
         return(
 
             <SafeAreaView>
+                <Text style={styles.textLabel}>Recent Episodes</Text>
                 <FlatList
                 numColumns={3}
                 data={response}
@@ -121,7 +119,12 @@ const styles = StyleSheet.create({
     },
     textLabel:{
         color: 'white',
+        color: 'white',
+        marginTop: -30,
+        marginBottom: 15,
+        paddingLeft: 20,
         fontWeight: 'bold',
+        fontSize: 25,
 
     }
 })
