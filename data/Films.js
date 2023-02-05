@@ -52,6 +52,8 @@ const Films = ()=>{
     }
     
     const getFilm = () =>{
+
+      
         if(isloading){
             return <ActivityIndicator  
             size={"large"}/>
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 25,
       marginTop: -40,
-      marginBottom: 15,
+      marginBottom: 20,
   }
 })
 
