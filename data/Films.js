@@ -27,9 +27,11 @@ const Films = ()=>{
         
     }, []);
 
+
+
     const FilmDesign = ({id, title, picture, link , date}) =>{
       return (
-        <TouchableOpacity>
+        <TouchableOpacity >
           <View >
               <View style={styles.card}>
                   <Image 
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
     cardTitle:{
       marginTop: -150,
       fontWeight: 'bold',
-      fontSize: 15
+      fontSize: 15,
     },
     cardDate:{
       marginTop: -50
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
       fontSize: 25,
       marginTop: -40,
       marginBottom: 20,
-      fontFamily: 'Lobster-Regular'
+      
   }
 })
 

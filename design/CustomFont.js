@@ -4,7 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 
 SplashScreen.preventAutoHideAsync();
 
-export default function Test() {
+function CustomFont() {
   const [fontsLoaded] = useFonts({
     'AbrilFatface-Regular': require('../assets/fonts/AbrilFatface-Regular.ttf'),
     'DancingScript-Regular': require('../assets/fonts/DancingScript-Regular.ttf'),
@@ -14,7 +14,7 @@ export default function Test() {
     'Sacramento-Regular': require('../assets/fonts/Sacramento-Regular.ttf'),
   });
 
-  const onLayoutRootView = useCallback(async () => {
+  const MyFont = useCallback(async () => {
     if (fontsLoaded) {
       await SplashScreen.hideAsync();
     }
@@ -23,5 +23,9 @@ export default function Test() {
   if (!fontsLoaded) {
     return null;
   }
-
+  
 }
+
+export default CustomFont;
+
+
