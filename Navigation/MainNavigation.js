@@ -14,8 +14,6 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
-
-
 const BottomNav = () =>{
     return (
         <Tab.Navigator screenOptions={{
