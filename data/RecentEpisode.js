@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
 import RecentEpisodePreview from "../Preview/RecentEpisodePreview";
 
 
@@ -10,7 +9,7 @@ const RecentAnime = () =>{
 
     let [isloading, setIsloading] = useState(true);
     let [error, setError] = useState();
-    let [response, setResponse] = useState();
+    let [response, setResponse] = useState([]);
 
     useEffect(()=>{
         fetch(url)
@@ -29,12 +28,15 @@ const RecentAnime = () =>{
 
     const getRecAnime = () =>{
         if(isloading){
-            <ActivityIndicator
-             size={'large'} />
+            <ActivityIndicator 
+                size={"large"}
+            /> 
         }
         return(
-
-            <SafeAreaView>
+            <View>
+                <Text style={styles.text}>
+                    Recent Episodes : 
+                </Text>
                 <FlatList
                 numColumns={3}
                 data={response}
@@ -46,7 +48,7 @@ const RecentAnime = () =>{
                     episode={item.episodeNumber}
                 />
             }/>
-            </SafeAreaView>
+            </View>
         )
     }
     
@@ -58,5 +60,18 @@ const RecentAnime = () =>{
     )
 
 }
+
+const styles = StyleSheet.create({
+    text: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 20,
+        marginLeft: 10,
+        marginTop: 15,
+        marginBottom: 15,
+        textDecorationLine: 'underline'
+    
+      }
+})
 
 export default RecentAnime;

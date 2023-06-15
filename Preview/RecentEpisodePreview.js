@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold'
     },
     labelAnime: {
         color: 'white',
@@ -84,7 +85,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         marginTop: -15,
         borderBottomLeftRadius: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 })
 export default RecentEpisodePreview;

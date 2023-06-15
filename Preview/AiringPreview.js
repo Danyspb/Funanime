@@ -17,7 +17,7 @@ const AiringPreview = ({id,title, url, image, genres}) =>{
                         <Text style={styles.carGenre}>
                             <Text style={styles.type}>Genres: </Text>
                             {
-                            genres+''
+                                genres +' '
                             }
                         </Text>
                     </View>
@@ -44,17 +44,20 @@ const styles = StyleSheet.create({
     cardTitle:{
         marginLeft: '53%',
         marginTop: '-50%',
-        color: 'pink'
+        color: 'pink',
+        fontWeight: 'bold'
     },
     type: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
-        color: 'red'
+        color: 'red',
+      
     },
     carGenre: {
         marginTop: 15,
         marginLeft: '53%',
-        color: 'cyan'
+        color: 'cyan',
+        fontWeight: 'bold'
     }
   
   })

@@ -15,13 +15,10 @@ const Home = () =>{
     return(
         
         <View style={styles.container}>
-            <ScrollView style={{paddingBottom: 120}}>
+            <ScrollView >
                 <Films />
-            </ScrollView>
-            <ScrollView>
                 <RecentAnime />
             </ScrollView>
-
         </View>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ActivityIndicator, FlatList, View } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
 import AiringPreview from "../Preview/AiringPreview";
 
 
@@ -8,7 +8,7 @@ let url = "https://api.consumet.org/anime/gogoanime/top-airing";
 const Films = ()=>{
     let [isloading, setIsLoading] = useState(true)
     let [error, setError] = useState();
-    let [response, setResponse] = useState();
+    let [response, setResponse] = useState([]);
 
     useEffect(()=> {
         fetch(url)
@@ -34,6 +34,9 @@ const getFilm = () =>{
         }
         return (
             <View>
+              <Text style={styles.text}>
+                    Top Airing : 
+                </Text>
               <FlatList
                 horizontal
                 data={response}
@@ -60,5 +63,16 @@ const getFilm = () =>{
       </View>
     )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 20,
+    marginLeft: 10,
+    marginTop: 10,
+    textDecorationLine: 'underline'
+  }
+})
 
 export default Films;
