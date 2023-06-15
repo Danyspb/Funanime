@@ -1,8 +1,9 @@
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-import PopularAnime from "../Data/PopularAnime";
-import RecentAnime from "../Data/RecentAnime";
-import Films from "../Data/Films";
+import PopularAnime from "../data/PopularAnime";
+import RecentAnime from "../data/RecentAnime";
+import Films from "../data/Airing";
+
 
 
 

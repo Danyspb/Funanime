@@ -52,7 +52,9 @@ const PopularAnime = () =>{
     const getAnimePop = () =>{
 
         if(isloading){
-            <ActivityIndicator size={'large'} />
+            <ActivityIndicator size={'large'}
+            />
+
         }
         
         return(
