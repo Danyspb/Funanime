@@ -27,7 +27,7 @@ const Films = ()=>{
     }, []);
     
 const getFilm = () =>{
-  
+
         if(isloading){
             return <ActivityIndicator  
             size={"large"}/>

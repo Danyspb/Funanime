@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View, TouchableOp
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-const url = 'https://gogoanime.consumet.stream/recent-release';
+const url = 'https://api.consumet.org/anime/gogoanime/recent-episodes';
 
 const RecentAnime = () =>{
 
@@ -17,7 +17,7 @@ const RecentAnime = () =>{
         .then(
             (result) =>{
             setIsloading(false);
-            setResponse(result);
+            setResponse(result.results);
             },
             (error) =>{
                 setIsloading(false);

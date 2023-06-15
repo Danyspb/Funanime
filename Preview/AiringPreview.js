@@ -2,7 +2,7 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const AiringPreview = ({id,title, url, image, genres}) =>{
-
+    
     return(
         <TouchableOpacity>
             <View>
