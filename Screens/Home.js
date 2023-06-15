@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import PopularAnime from "../data/PopularAnime";
-import RecentAnime from "../data/RecentAnime";
+import RecentAnime from "../data/RecentEpisode";
 import Films from "../data/Airing";
 
 
@@ -18,9 +18,6 @@ const Home = () =>{
          <ScrollView >
             <View>
                 <Films /> 
-            </View>
-            <View>
-                <PopularAnime /> 
             </View>
             <View>
                 <RecentAnime /> 

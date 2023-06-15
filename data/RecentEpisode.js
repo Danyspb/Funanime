@@ -27,7 +27,7 @@ const RecentAnime = () =>{
     }, []);
 
 
-    const NouvAnimme = ({title, picture, link, episode, type }) =>{
+    const NouvAnimme = ({title, picture, url ,episodeNumber,episodeId}) =>{
 
         return(
 
@@ -64,12 +64,10 @@ const RecentAnime = () =>{
                 numColumns={3}
                 data={response}
                 renderItem={({item})=>
-                <NouvAnimme key={item.animeId}
-                title={item.animeTitle}
-                picture={item.animeImg}
-                episode={item.episodeNum}
-                type={item.subOrDub}
-                link={item.episodeUrl}
+                <NouvAnimme key={item.episodeId}
+                title={item.title}
+                picture={item.image}
+                episode={item.episodeNumber}
                 />}
                 />
             </SafeAreaView>
