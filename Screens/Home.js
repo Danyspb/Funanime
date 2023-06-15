@@ -13,15 +13,14 @@ import Films from "../data/Airing";
 const Home = () =>{
 
     return(
+        
         <View style={styles.container}>
-         <ScrollView >
-            <View>
-                <Films /> 
-            </View>
-            <View>
-                <RecentAnime /> 
-            </View>
-         </ScrollView>
+            <ScrollView style={{paddingBottom: 120}}>
+                <Films />
+            </ScrollView>
+            <ScrollView>
+                <RecentAnime />
+            </ScrollView>
 
         </View>
     )
