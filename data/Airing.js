@@ -29,8 +29,10 @@ const Films = ()=>{
 const getFilm = () =>{
 
         if(isloading){
-            return <ActivityIndicator  
-            size={"large"}/>
+            return<View>
+                  <ActivityIndicator size={"large"} color={"#00ff00"} />
+            </View>
+            
         }
         return (
             <View>
