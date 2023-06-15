@@ -1,12 +1,13 @@
 import React from "react";
-import { Image, Text } from "react-native";
+import { Image, StyleSheet, Text } from "react-native";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
 
 
-const RecentEpisodePreview = ()=>{
+const RecentEpisodePreview = ({title, picture, url ,episodeNumber,episodeId})=>{
 
     return(
+
         <TouchableOpacity >
                 <View style={styles.card}>
                     <View >

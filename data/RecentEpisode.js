@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator, FlatList, Image, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import RecentEpisodePreview from "../Preview/RecentEpisodePreview";
 
 
 const url = 'https://api.consumet.org/anime/gogoanime/recent-episodes';
@@ -64,12 +65,13 @@ const RecentAnime = () =>{
                 numColumns={3}
                 data={response}
                 renderItem={({item})=>
-                <NouvAnimme key={item.episodeId}
-                title={item.title}
-                picture={item.image}
-                episode={item.episodeNumber}
-                />}
+                <RecentEpisodePreview 
+                    key={item.episodeId}
+                    title={item.title}
+                    picture={item.image}
+                    episode={item.episodeNumber}
                 />
+            }/>
             </SafeAreaView>
         )
     }
