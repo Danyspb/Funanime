@@ -6,9 +6,32 @@ import { Feather } from '@expo/vector-icons';
 
 const Search = () =>{
 
-    <View>
-        hello
-    </View>
+    const [search, setSearch] = useState('')
+
+    const sendInfo = useCallback(()=>{
+        setSearch("");
+    }, [search])
+
+  
+
+    return (
+        <View style={styles.container}>
+        
+            <TextInput 
+                style={styles.textbox}
+                onChangeText={(text) =>setSearch(text)}
+                value={search}
+                placeholder="search"
+                onSubmitEditing={sendInfo} 
+                
+             /> 
+             
+             
+        </View>
+    )
+
+
+
      
 }
 
@@ -35,4 +58,3 @@ const styles = StyleSheet.create({
 })
 
 export default Search;
-
