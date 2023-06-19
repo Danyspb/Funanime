@@ -76,9 +76,8 @@ const MainNavigation = () =>{
 }
 
 const styles = StyleSheet.create({
-    header:{
-        color: "blue"
-    }
+  
+
 })
 
 export default MainNavigation;

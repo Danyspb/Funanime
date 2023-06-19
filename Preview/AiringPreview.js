@@ -33,8 +33,7 @@ const styles = StyleSheet.create({
         height: 200,
         backgroundColor: 'hsla(341, 100%, 66%, 0.16)',
         borderRadius: 25,
-        marginLeft: 21,
-  
+        marginLeft: 21
     },
     cardPic:{
         height: '100%',
