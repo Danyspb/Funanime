@@ -4,7 +4,8 @@ import { TextInput } from "react-native";
 import { StyleSheet,  View } from "react-native";
 import { Feather } from '@expo/vector-icons';
 
-const Search = () =>{
+
+const SearchData = () =>{
 
     const [search, setSearch] = useState('')
 
@@ -15,8 +16,8 @@ const Search = () =>{
   
 
     return (
-        <View style={styles.container}>
-        
+        <View>
+
             <TextInput 
                 style={styles.textbox}
                 onChangeText={(text) =>setSearch(text)}
@@ -24,37 +25,27 @@ const Search = () =>{
                 placeholder="search"
                 onSubmitEditing={sendInfo} 
                 
-             /> 
-             
+             />    
              
         </View>
     )
-
-
 
      
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#181D31',
-    },
-    text:{
-        color: '#F0E9D2'
-    },
-    textbox:{
 
+    textbox:{
         width: 300,
+        height: 45,
         backgroundColor: 'cyan',
         borderWidth: 1,
         borderRadius: 50,
         marginHorizontal: 10,
         paddingHorizontal: 12,
-        
+        marginTop: -180,
+        textAlign: "center"
     }
 })
 
-export default Search;
+export default SearchData;

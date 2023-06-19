@@ -26,7 +26,7 @@ const Films = ()=>{
         
     }, []);
     
-const getFilm = () =>{
+  const getFilm = () =>{
 
         if(isloading){
             return<View>

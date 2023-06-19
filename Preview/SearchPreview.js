@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const SearchPreview = () =>{
     return(
@@ -7,7 +7,15 @@ const SearchPreview = () =>{
             <Text>
                 les resultats des recherhes
             </Text>
-        </View>
+        </View>   
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center"
+    }
+})
 export default SearchPreview;

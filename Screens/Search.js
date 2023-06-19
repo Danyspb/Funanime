@@ -1,16 +1,18 @@
-
-import React, { useCallback, useState } from "react";
-import { TextInput } from "react-native";
+import { Text } from "react-native";
 import { StyleSheet,  View } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import SearchData from "../data/SearchingData";
+
 
 const Search = () =>{
 
-    <View>
-        hello
-    </View>
-     
+    return(
+        <View style={styles.container}>
+            <SearchData /> 
+            
+        </View>
+    )
 }
+     
 
 const styles = StyleSheet.create({
     container:{
@@ -21,16 +23,6 @@ const styles = StyleSheet.create({
     },
     text:{
         color: '#F0E9D2'
-    },
-    textbox:{
-
-        width: 300,
-        backgroundColor: 'cyan',
-        borderWidth: 1,
-        borderRadius: 50,
-        marginHorizontal: 10,
-        paddingHorizontal: 12,
-        
     }
 })
 
