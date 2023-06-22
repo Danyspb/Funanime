@@ -1,8 +1,10 @@
 
 import React, { useCallback, useState } from "react";
-import { TextInput } from "react-native";
+import { Text, TextInput, TouchableOpacity } from "react-native";
 import { StyleSheet,  View } from "react-native";
-import { Feather } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import { KeyboardAvoidingView } from "react-native";
+import { SafeAreaView } from "react-native";
 
 
 const SearchData = () =>{
@@ -12,22 +14,25 @@ const SearchData = () =>{
     const sendInfo = useCallback(()=>{
         setSearch("");
     }, [search])
-
   
 
     return (
-        <View>
-
-            <TextInput 
-                style={styles.textbox}
-                onChangeText={(text) =>setSearch(text)}
-                value={search}
-                placeholder="search"
-                onSubmitEditing={sendInfo} 
-                
-             />    
-             
-        </View>
+        <SafeAreaView>
+            <View style={styles.container}>
+                <KeyboardAvoidingView>
+                    <TextInput 
+                        style={styles.textbox}
+                        onChangeText={(text) =>setSearch(text)}
+                        value={search}
+                        placeholder="search"
+                        onSubmitEditing={sendInfo} 
+                    /> 
+                    <TouchableOpacity>
+                        <Ionicons name="search" size={24} color="cyan" />
+                    </TouchableOpacity>
+                </KeyboardAvoidingView>
+            </View>
+        </SafeAreaView>
     )
 
      
@@ -36,16 +41,17 @@ const SearchData = () =>{
 const styles = StyleSheet.create({
 
     textbox:{
-        width: 300,
-        height: 45,
-        backgroundColor: 'cyan',
-        borderWidth: 1,
-        borderRadius: 50,
-        marginHorizontal: 10,
-        paddingHorizontal: 12,
-        marginTop: -180,
-        textAlign: "center"
+       width: 200,
+       height: 35,
+       backgroundColor: 'cyan',
+    },
+    searcheIcon:{
+        
+    },
+    container:{
+        display: 1,
     }
+
 })
 
 export default SearchData;
