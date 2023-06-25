@@ -11,10 +11,22 @@ import SearchPreview from "../Preview/SearchPreview";
 
 const SearchData = () =>{
 
-    const [notices, setNotices] = useState()
-    const [search, setSearch] = useState() 
-    const [loading, setLoading] = useState()
-    console.log(search);
+    const [result, setResult] = useState([])
+    const [search, setSearch] = useState(null) 
+    const [loading, setLoading] = useState(false)
+
+    useEffect(()=>{
+        async function fetchData(){
+            setLoading(true)
+            const data = await fetch(`https://api.consumet.org/anime/gogoanime/${search}?page={number}`)
+            .then(res => res.json());
+        setResult(data.results);
+        setLoading(false)
+        }
+        fetchData()
+    },[search])
+
+    
     return (
         <SafeAreaView>
             <View style={styles.container}>
