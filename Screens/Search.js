@@ -1,4 +1,3 @@
-import { Text } from "react-native";
 import { StyleSheet,  View } from "react-native";
 import SearchData from "../data/SearchingData";
 
@@ -8,7 +7,6 @@ const Search = () =>{
     return(
         <View style={styles.container}>
             <SearchData /> 
-            
         </View>
     )
 }

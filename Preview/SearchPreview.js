@@ -1,12 +1,29 @@
 import React from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const SearchPreview = ({id, title, link, picture, date, type}) =>{
     return(
-        <View style={styles.container}>
-            
-
-        </View>   
+        <TouchableOpacity >
+        <View style={{backgroundColor: 'blue', marginTop: 20}}>
+            <View style={styles.card}>
+                <View >
+                    <Image style={styles.cardPic}
+                    source={{uri: picture}}
+                    />
+                    <Text style={styles.info}>
+                        {date}
+                    </Text>
+                </View>
+                <View>
+                    <Text style={styles.titre}>
+                        {
+                            title ? (title.length > 20 ? title.slice(0, 25) + "..." : title) : true
+                        }
+                    </Text>
+                </View>
+            </View>
+        </View>
+    </TouchableOpacity>
     )
 }
 
@@ -18,7 +35,6 @@ const styles = StyleSheet.create({
         margin: 5,
         marginBottom: 70,
         
-
     },
     cardPic:{
         alignItems: 'center',
@@ -54,13 +70,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 25,
     },
-    epi:{
+    info:{
         color: 'white',
         backgroundColor: 'red',
         marginTop: -15,
         borderBottomLeftRadius: 20,
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textAlignVertical: 'center'
     }
 })
 export default SearchPreview;

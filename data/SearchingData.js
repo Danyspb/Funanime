@@ -7,6 +7,7 @@ import { SafeAreaView } from "react-native";
 import SearchPreview from "../Preview/SearchPreview";
 import { ActivityIndicator } from "react-native";
 import { FlatList } from "react-native";
+import useDebounce from "../utils/SearchUtility";
 
 
 
@@ -16,20 +17,22 @@ const SearchData = () =>{
     const [result, setResult] = useState([])
     const [search, setSearch] = useState(null) 
     const [loading, setLoading] = useState(false)
+    const debounceSearch = useDebounce(search, 500);
 
     useEffect(()=>{
         async function fetchData(){
             setLoading(true)
-            const data = await fetch(`https://api.consumet.org/anime/gogoanime/${search}?page={number}`)
+            const data = await fetch(`https://api.consumet.org/anime/gogoanime/${debounceSearch}?page={number}`)
             .then(res => res.json());
         setResult(data.results);
         setLoading(false)
         }
-        fetchData()
-    },[search])
+        if(debounceSearch) fetchData()
+        
+    },[debounceSearch])
 
-
-    const getSearchAnime =() =>{
+console.log(result);
+    const getSearchAnime = () =>{
         if(loading){
             <ActivityIndicator 
              size={16}
@@ -69,8 +72,8 @@ const SearchData = () =>{
                         placeholder=" search the title of the anime"
                     /> 
                 </KeyboardAvoidingView>
+                    {getSearchAnime()}
                 <SearchPreview /> 
-                {getSearchAnime()}
             </View>
         </SafeAreaView>
     )
