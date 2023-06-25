@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
         width: 120,
         height: 160,
         margin: 5,
-        marginBottom: 70,
+        marginBottom: 60,
         
     },
     cardPic:{
