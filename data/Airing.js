@@ -30,10 +30,10 @@ const Films = ()=>{
 
         if(isloading){
             return<View>
-                  <ActivityIndicator size={"large"} color={"#00ff00"} />
+                  <ActivityIndicator size={"large"} color={"#00ff00"}/>
             </View>
-            
         }
+
         return (
             <View>
               <Text style={styles.text}>

@@ -27,10 +27,11 @@ const RecentAnime = () =>{
     }, []);
 
     const getRecAnime = () =>{
+
         if(isloading){
-            <ActivityIndicator 
-                size={"large"}
-            /> 
+            return<View>
+                  <ActivityIndicator size={"large"} color={"#00ff00"} />
+            </View>
         }
         return(
             <View>
