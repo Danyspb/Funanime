@@ -27,9 +27,6 @@ const RecentEpisodePreview = ({title, picture, url ,episode,episodeId})=>{
                         </Text>
                     </View>
                 </View>
-                    <View>
-                        
-                    </View>
             </View>
         </TouchableOpacity>
     )

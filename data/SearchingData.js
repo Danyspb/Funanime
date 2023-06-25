@@ -28,6 +28,7 @@ const SearchData = () =>{
         fetchData()
     },[search])
 
+
     const getSearchAnime =() =>{
         if(loading){
             <ActivityIndicator 
@@ -42,7 +43,13 @@ const SearchData = () =>{
                     data={result}
                     renderItem={({item})=>
                     <SearchPreview 
-                    item={item}
+                    key={item.id}
+                    id={item.id}
+                    title={item.title}
+                    picture={item.image}
+                    date={item.releaseDate}
+                    type={item.subOrDub}
+                    link={item.url}
                     /> 
 
                     }
@@ -63,9 +70,11 @@ const SearchData = () =>{
                     /> 
                 </KeyboardAvoidingView>
                 <SearchPreview /> 
+                {getSearchAnime()}
             </View>
         </SafeAreaView>
     )
+
 
      
 }
