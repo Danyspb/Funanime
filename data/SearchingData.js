@@ -5,6 +5,8 @@ import { StyleSheet,  View } from "react-native";
 import { KeyboardAvoidingView } from "react-native";
 import { SafeAreaView } from "react-native";
 import SearchPreview from "../Preview/SearchPreview";
+import { ActivityIndicator } from "react-native";
+import { FlatList } from "react-native";
 
 
 
@@ -26,7 +28,29 @@ const SearchData = () =>{
         fetchData()
     },[search])
 
-    
+    const getSearchAnime =() =>{
+        if(loading){
+            <ActivityIndicator 
+             size={16}
+             color={"#00ff00"}
+            /> 
+        }
+        return(
+            <View>
+                <FlatList 
+                    numColumns={3}
+                    data={result}
+                    renderItem={({item})=>
+                    <SearchPreview 
+                    item={item}
+                    /> 
+
+                    }
+                />
+            </View>
+        )
+    }
+
     return (
         <SafeAreaView>
             <View style={styles.container}>
