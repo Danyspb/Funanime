@@ -12,7 +12,9 @@ const AiringPreview = ({id,title, url, image, genres}) =>{
                         /> 
                         <Text style={styles.cardTitle}>
                             <Text style={styles.type}>Title: </Text>
-                        { title }
+                        { 
+                        title ? (title.length > 20 ? title.slice(0, 40) + "..." : title) : true
+                         }
                         </Text>
                         <Text style={styles.carGenre}>
                             <Text style={styles.type}>Genres: </Text>

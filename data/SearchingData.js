@@ -1,21 +1,20 @@
 
-import React, { useCallback, useState } from "react";
-import { Text, TextInput, TouchableOpacity } from "react-native";
+import React, { useCallback, useEffect, useState } from "react";
+import { TextInput} from "react-native";
 import { StyleSheet,  View } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
 import { KeyboardAvoidingView } from "react-native";
 import { SafeAreaView } from "react-native";
+import SearchPreview from "../Preview/SearchPreview";
+
+
 
 
 const SearchData = () =>{
 
-    const [search, setSearch] = useState('')
-
-    const sendInfo = useCallback(()=>{
-        setSearch("");
-    }, [search])
-  
-
+    const [notices, setNotices] = useState()
+    const [search, setSearch] = useState() 
+    const [loading, setLoading] = useState()
+    console.log(search);
     return (
         <SafeAreaView>
             <View style={styles.container}>
@@ -24,13 +23,10 @@ const SearchData = () =>{
                         style={styles.textbox}
                         onChangeText={(text) =>setSearch(text)}
                         value={search}
-                        placeholder="search"
-                        onSubmitEditing={sendInfo} 
+                        placeholder=" search the title of the anime"
                     /> 
-                    <TouchableOpacity>
-                        <Ionicons name="search" size={24} color="cyan" />
-                    </TouchableOpacity>
                 </KeyboardAvoidingView>
+                <SearchPreview /> 
             </View>
         </SafeAreaView>
     )
@@ -41,15 +37,19 @@ const SearchData = () =>{
 const styles = StyleSheet.create({
 
     textbox:{
-       width: 200,
-       height: 35,
+       width: 250,
+       height: 40,
        backgroundColor: 'cyan',
-    },
-    searcheIcon:{
-        
+       borderRadius: 15,
+       textAlign: "center",
+       textShadowColor: 'gold',
+       fontSize: 15
+       
+
     },
     container:{
-        display: 1,
+        flex: 1,
+        marginTop: 20,
     }
 
 })
