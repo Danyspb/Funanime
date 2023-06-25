@@ -1,7 +1,6 @@
 import { StyleSheet,  View } from "react-native";
 import SearchData from "../data/SearchingData";
 
-
 const Search = () =>{
 
     return(
@@ -10,7 +9,6 @@ const Search = () =>{
         </View>
     )
 }
-     
 
 const styles = StyleSheet.create({
     container:{

@@ -80,15 +80,16 @@ const styles = StyleSheet.create({
        backgroundColor: 'cyan',
        borderRadius: 15,
        textAlign: "center",
-       textShadowColor: 'gold',
        fontSize: 15,
-       marginLeft: 15
+       marginLeft: 15,
+
     },
     container:{
         flex: 1,
         marginTop: 20,
         alignItems:"center",
-    }
+    }, 
+   
 
 })
 
