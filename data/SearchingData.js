@@ -1,13 +1,14 @@
 
 import React, { useEffect, useState } from "react";
-import { StyleSheet,  View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import SearchPreview from "../Preview/SearchPreview";
 import { ActivityIndicator } from "react-native";
 import { FlatList } from "react-native";
-import { VStack, Input, Icon, NativeBaseProvider } from "native-base";
+import { VStack, Input, Icon, NativeBaseProvider, Box } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
 import useDebounce from "../utils/SearchUtility";
 
+var {width} = Dimensions.get("screen");
 
 const SearchData = () =>{
 
@@ -58,23 +59,25 @@ const SearchData = () =>{
     }
 
     return (
-        <NativeBaseProvider>
-            <View style={styles.container}>
-                <VStack style={{marginBottom: 15}}>
-                    <Input 
-                        color="white"
-                        placeholder="Search the title of the Anime" 
-                        width="100%" 
-                        borderRadius="4" 
-                        py="3" px="1" fontSize="14" 
-                        InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />}
-                        onChangeText={(text) =>setSearch(text)}
-                        value={search}
-                    /> 
-                </VStack>
-                {getSearchAnime()}
-                <SearchPreview /> 
-            </View>
+        <NativeBaseProvider >
+            <Box>
+                <View style={styles.container}>
+                    <VStack style={{marginBottom: 15}}>
+                        <Input 
+                            color="white"
+                            width={width}
+                            placeholder="Search the title of the Anime" 
+                            borderRadius="4" 
+                            py="3" px="1" fontSize="14" 
+                            InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />}
+                            onChangeText={(text) =>setSearch(text)}
+                            value={search}
+                        /> 
+                    </VStack>
+                    {getSearchAnime()}
+                    <SearchPreview /> 
+                </View>
+            </Box>
         </NativeBaseProvider>
     )
 }
