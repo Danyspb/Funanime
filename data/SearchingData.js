@@ -1,10 +1,11 @@
 
 import React, { useEffect, useState } from "react";
-import {  TextInput} from "react-native";
 import { StyleSheet,  View } from "react-native";
 import SearchPreview from "../Preview/SearchPreview";
 import { ActivityIndicator } from "react-native";
 import { FlatList } from "react-native";
+import { VStack, Input, Icon, NativeBaseProvider } from "native-base";
+import { MaterialIcons } from "@expo/vector-icons";
 import useDebounce from "../utils/SearchUtility";
 
 
@@ -50,40 +51,35 @@ const SearchData = () =>{
                     link={item.url}
                     /> 
 
-                    }
+                }
                 />
             </View>
         )
     }
 
     return (
+        <NativeBaseProvider>
             <View style={styles.container}>
-                    <TextInput 
-                        style={styles.textbox}
+                <VStack style={{marginBottom: 15}}>
+                    <Input 
+                        color="white"
+                        placeholder="Search the title of the Anime" 
+                        width="100%" 
+                        borderRadius="4" 
+                        py="3" px="1" fontSize="14" 
+                        InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />}
                         onChangeText={(text) =>setSearch(text)}
                         value={search}
-                        placeholder=" search the title of the anime"
                     /> 
-                    {getSearchAnime()}
+                </VStack>
+                {getSearchAnime()}
                 <SearchPreview /> 
             </View>
-        
+        </NativeBaseProvider>
     )
 }
-
 const styles = StyleSheet.create({
 
-    textbox:{
-       width: 250,
-       height: 40,
-       marginBottom: 20,
-       backgroundColor: 'cyan',
-       borderRadius: 15,
-       textAlign: "center",
-       fontSize: 15,
-       marginLeft: 15,
-
-    },
     container:{
         flex: 1,
         marginTop: 20,

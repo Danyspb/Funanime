@@ -4,12 +4,6 @@ import RecentAnime from "../data/RecentEpisode";
 import Films from "../data/Airing";
 
 
-
-
-
-
-
-
 const Home = () =>{
 
     return(

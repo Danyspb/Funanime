@@ -1,4 +1,4 @@
-import { StyleSheet,  View } from "react-native";
+import { ScrollView, StyleSheet,  View } from "react-native";
 import SearchData from "../data/SearchingData";
 
 const Search = () =>{
