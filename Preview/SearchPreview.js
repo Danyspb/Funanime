@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const SearchPreview = ({id, title, link, picture, date, type}) =>{
     return(
-        <TouchableOpacity >
+    <TouchableOpacity >
         <View>
             <View style={styles.card}>
                 <View >

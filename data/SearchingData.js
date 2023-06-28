@@ -12,21 +12,21 @@ var {width} = Dimensions.get("screen");
 
 const SearchData = () =>{
 
-    const [result, setResult] = useState([])
-    const [search, setSearch] = useState(null) 
-    const [loading, setLoading] = useState(false)
+    const [result, setResult] = useState([]);
+    const [search, setSearch] = useState(null); 
+    const [loading, setLoading] = useState(false);
     const debounceSearch = useDebounce(search, 300);
 
     useEffect(()=>{
         async function fetchData(){
-            setLoading(true);
-            setResult([]);
-            const data = await fetch(`https://api.consumet.org/anime/gogoanime/${debounceSearch}?page={number}`)
-            .then(res => res.json());
-        setResult(data.results);
-        setLoading(false)
+                setLoading(true);
+                setResult([]);
+                const data = await fetch(`https://api.consumet.org/anime/gogoanime/${debounceSearch}?page={number}`)
+                .then(res => res.json());
+                setResult(data.results);
+                setLoading(false)
         }
-        if(debounceSearch) fetchData()
+        if(debounceSearch)fetchData()
     },[debounceSearch])
 
     const getSearchAnime = () =>{
@@ -51,7 +51,6 @@ const SearchData = () =>{
                     type={item.subOrDub}
                     link={item.url}
                     /> 
-
                 }
                 />
             </View>
@@ -72,6 +71,7 @@ const SearchData = () =>{
                             InputLeftElement={<Icon m="2" ml="3" size="6" color="gray.400" as={<MaterialIcons name="search" />} />}
                             onChangeText={(text) =>setSearch(text)}
                             value={search}
+                            autoFocus
                         /> 
                     </VStack>
                     {getSearchAnime()}
