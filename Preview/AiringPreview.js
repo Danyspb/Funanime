@@ -1,5 +1,7 @@
 import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+const { width} = Dimensions.get('screen');
 
 const AiringPreview = ({id,title, url, image, genres}) =>{
 
@@ -31,11 +33,12 @@ const AiringPreview = ({id,title, url, image, genres}) =>{
 const styles = StyleSheet.create({
     container:{
         marginTop: 15,
-        width: 350,
-        height: 200,
+        width: width,
+        height: 250,
         backgroundColor: 'hsla(341, 100%, 66%, 0.16)',
         borderRadius: 25,
-        marginLeft: 21
+        margin: 5
+        
     },
     cardPic:{
         height: '100%',

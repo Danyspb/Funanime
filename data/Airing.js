@@ -41,6 +41,9 @@ const Films = ()=>{
                 </Text>
               <FlatList
                 horizontal
+                pagingEnabled={true}
+                snapToAlignment="center"
+                showsHorizontalScrollIndicator={false}
                 data={response}
                 renderItem={({item}) => 
                 <AiringPreview 
