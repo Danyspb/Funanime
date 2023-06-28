@@ -10,6 +10,7 @@ const AiringPreview = ({id,title, url, image, genres}) =>{
             <View>
                 <View style={styles.container}>
                         <Image source={{uri: image}}
+                        resizeMode="contain"
                         style={styles.cardPic}
                         /> 
                         <Text style={styles.cardTitle}>

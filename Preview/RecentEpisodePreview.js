@@ -14,6 +14,7 @@ const RecentEpisodePreview = ({title, picture, url ,episode,episodeId})=>{
                     <View >
                         <Image style={styles.cardPic}
                         source={{uri: picture}}
+                        resizeMode="contain"
                         />
                         <Text style={styles.epi}>
                             {`Episode: ${episode}`}
