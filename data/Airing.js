@@ -3,9 +3,10 @@ import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-nativ
 import AiringPreview from "../Preview/AiringPreview";
 
 
+
 let url = "https://api.consumet.org/anime/gogoanime/top-airing";
 
-const Films = ()=>{
+const Films = (props)=>{
     let [isloading, setIsLoading] = useState(true)
     let [error, setError] = useState();
     let [response, setResponse] = useState([]);
@@ -47,12 +48,9 @@ const Films = ()=>{
                 data={response}
                 renderItem={({item}) => 
                 <AiringPreview 
+                  navigation={props.navigation}
                   key={item.id}  
-                  title={item.title}
-                  image={item.image}
-                  url={item.url}
-                  genres={item.genres}
-                  id={item.id}
+                  item={item}
                 /> 
                 }
                 keyExtractor={item => item.id}

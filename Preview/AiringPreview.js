@@ -1,31 +1,39 @@
+
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+
 const { width} = Dimensions.get('screen');
 
-const AiringPreview = ({id,title, url, image, genres}) =>{
-
+const AiringPreview = (props) =>{
+    const {item} = props;
     return(
-        <TouchableOpacity>
+        <TouchableOpacity 
+        onPress={()=>{
+            props.navigation.navigate('Details',{item:item})
+            console.log({item});
+        }}
+        >
             <View>
                 <View style={styles.container}>
-                        <Image source={{uri: image}}
+                        <Image source={{uri: item.image}}
                         resizeMode="contain"
                         style={styles.cardPic}
                         /> 
                         <Text style={styles.cardTitle}>
                             <Text style={styles.type}>Title: </Text>
                         { 
-                        title ? (title.length > 20 ? title.slice(0, 40) + "..." : title) : true
+                        item.title ? (item.title.length > 20 ? item.title.slice(0, 40) + "..." : item.title) : true
                          }
                         </Text>
                         <Text style={styles.carGenre}>
                             <Text style={styles.type}>Genres: </Text>
                             {
-                                genres +' '
+                                item.genres +' '
                             }
                         </Text>
-                    </View>
+                 </View>
+                
             </View>
         </TouchableOpacity>
     )
@@ -56,13 +64,14 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: 'red',
+        textDecorationLine: 'underline'
       
     },
     carGenre: {
         marginTop: 15,
         marginLeft: '53%',
         color: 'cyan',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     }
   
   })
