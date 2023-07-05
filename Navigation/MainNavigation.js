@@ -17,8 +17,11 @@ const Tab = createBottomTabNavigator();
 
 const BottomNav = () =>{
     return (
-        <Tab.Navigator screenOptions={{
+        <Tab.Navigator 
+        initialRouteName="Home"
+        screenOptions={{
             tabBarShowLabel: false
+            
         }}>
             <Tab.Screen name="Home" component={Home} options={{
                 tabBarIcon: () =><Ionicons name="home" size={24} color="blue" />,

@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 
-const Details = (props) =>{
-    const [item,setItem] = useState(props.route.params.item);
-    const [availability, setAvailability] = useState(null);
+const Details =({id})=>{
 
+    const [infId,setInfId] = useState(route.params.id);
+    const [availability, setAvailability] = useState(null);
     return(
         <View>
             <Text>
-                {item.id}
+                welcome to the details page : {id}
             </Text>
         </View>
     )
 }
 
-export default Details;
+export default Details

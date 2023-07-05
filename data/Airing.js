@@ -4,9 +4,10 @@ import AiringPreview from "../Preview/AiringPreview";
 
 
 
+
 let url = "https://api.consumet.org/anime/gogoanime/top-airing";
 
-const Films = (props)=>{
+const Films = ()=>{
     let [isloading, setIsLoading] = useState(true)
     let [error, setError] = useState();
     let [response, setResponse] = useState([]);
@@ -48,9 +49,11 @@ const Films = (props)=>{
                 data={response}
                 renderItem={({item}) => 
                 <AiringPreview 
-                  navigation={props.navigation}
+                  title={item.title}
+                  image={item.image}
+                  genres={item.genres}
+                  id={item.id}
                   key={item.id}  
-                  item={item}
                 /> 
                 }
                 keyExtractor={item => item.id}

@@ -2,38 +2,35 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-
 const { width} = Dimensions.get('screen');
 
-const AiringPreview = (props) =>{
-    const {item} = props;
+const AiringPreview = ({title, image, genres, id}) =>{
+    
     return(
-        <TouchableOpacity 
-        onPress={()=>{
-            props.navigation.navigate('Details',{item:item})
-            console.log({item});
-        }}
+        <TouchableOpacity
+            onPress={()=>{
+               console.log({id})
+            }}
         >
             <View>
                 <View style={styles.container}>
-                        <Image source={{uri: item.image}}
+                        <Image source={{uri: image}}
                         resizeMode="contain"
                         style={styles.cardPic}
                         /> 
                         <Text style={styles.cardTitle}>
                             <Text style={styles.type}>Title: </Text>
                         { 
-                        item.title ? (item.title.length > 20 ? item.title.slice(0, 40) + "..." : item.title) : true
+                            title ? (title.length > 20 ? title.slice(0, 40) + "..." : title) : true
                          }
                         </Text>
                         <Text style={styles.carGenre}>
                             <Text style={styles.type}>Genres: </Text>
                             {
-                                item.genres +' '
+                                genres +' '
                             }
                         </Text>
                  </View>
-                
             </View>
         </TouchableOpacity>
     )
