@@ -47,6 +47,7 @@ const RecentAnime = () =>{
                     title={item.title}
                     picture={item.image}
                     episode={item.episodeNumber}
+                    id={item.id}
                 />
             }/>
             </View>

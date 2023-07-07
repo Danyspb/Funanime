@@ -2,13 +2,19 @@ import React from "react";
 import { Image, StyleSheet, Text } from "react-native";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
+import { navigate } from "../utils/RootNavigation";
 
 
-const RecentEpisodePreview = ({title, picture, url ,episode,episodeId})=>{
+const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
 
     return(
 
-        <TouchableOpacity >
+        <TouchableOpacity 
+        onPress={()=>{
+            navigate('Details',{id})  
+        }}
+        
+        >
             <View>
                 <View style={styles.card}>
                     <View >

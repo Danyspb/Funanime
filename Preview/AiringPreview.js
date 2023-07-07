@@ -1,5 +1,4 @@
 
-
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { navigate } from "../utils/RootNavigation";
@@ -14,8 +13,7 @@ const AiringPreview = ({title, image, genres, id }) =>{
     return(
         <TouchableOpacity
         onPress={()=>{
-            navigate('Details',{id})
-            
+            navigate('Details',{id})  
         }}
         >
             <View>

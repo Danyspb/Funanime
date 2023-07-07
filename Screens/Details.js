@@ -3,13 +3,13 @@ import { Text, View } from "react-native";
 
 const Details =(props)=>{
 
-    const [infId, setInfId] = useState(props.route.params.id)
-    console.log("Details", props);
-
+    const [id, setId] = useState((props.route.params.id))
+    console.log(id);
+   
     return(
         <View>
             <Text>
-                welcome to the details page : 
+                Welcome to the details page : {id}
             </Text>
         </View>
     )
