@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
-import { log } from "react-native-reanimated";
 
 const Details =(props)=>{
 
-    
+    const [infId, setInfId] = useState(props.route.params.id)
+    console.log("Details", props);
+
     return(
         <View>
             <Text>
