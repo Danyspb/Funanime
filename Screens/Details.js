@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
+import { log } from "react-native-reanimated";
 
 const Details =(props)=>{
 
-    const [infId,setInfId] = useState(props.params.id);
-    const [availability, setAvailability] = useState(null);
+    
     return(
         <View>
             <Text>
-                welcome to the details page : {id}
+                welcome to the details page : 
             </Text>
         </View>
     )

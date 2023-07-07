@@ -15,6 +15,7 @@ const AiringPreview = ({title, image, genres, id }) =>{
         <TouchableOpacity
         onPress={()=>{
             navigate('Details',{id:id})
+            
         }}
         >
             <View>
