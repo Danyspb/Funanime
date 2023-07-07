@@ -39,7 +39,6 @@ const BottomNav = () =>{
                     backgroundColor: 'gold'
                 },
                 
-                
             }} />
             <Tab.Screen name="Search" component={Search}  options={{
                 tabBarIcon: ()=><Ionicons name="search" size={24} color="red" />,
@@ -64,6 +63,7 @@ const MainNavigation = () =>{
         <Stack.Navigator>
             <Stack.Screen name="Acceuil" component={BottomNav} options={{
                 headerShown: false,
+                
                 }} />
             <Stack.Screen name="Favoris" component={Favoris} options={{
                 headerShown: false,
@@ -71,9 +71,11 @@ const MainNavigation = () =>{
                 }} />
             <Stack.Screen name="Search" component={Search} options={{
                 headerShown: false,
+                
                 }} />
             <Stack.Screen name="Download" component={Download} options={{
                 headerShown: false,
+                
                 }} />
             <Stack.Screen name="Details" component={Details} options={{
                 headerShown: false,
