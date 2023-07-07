@@ -1,13 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React from "react";
-
 import MainNavigation from "./MainNavigation";
+import { navigationRef } from '../utils/RootNavigation';
 
 
 const AppNavigation = () =>{
     return (
 
-       <NavigationContainer>
+       <NavigationContainer ref={navigationRef}>
             <MainNavigation />
        </NavigationContainer>
        

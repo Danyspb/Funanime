@@ -1,16 +1,21 @@
 
+
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { navigate } from "../utils/RootNavigation";
+
 
 const { width} = Dimensions.get('screen');
 
-const AiringPreview = ({title, image, genres, id}) =>{
+
+const AiringPreview = ({title, image, genres, id }) =>{
+
     
     return(
         <TouchableOpacity
-            onPress={()=>{
-               console.log({id})
-            }}
+        onPress={()=>{
+            navigate('Details',{id:id})
+        }}
         >
             <View>
                 <View style={styles.container}>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Text, View } from "react-native";
 
-const Details =({id})=>{
+const Details =(props)=>{
 
-    const [infId,setInfId] = useState(route.params.id);
+    const [infId,setInfId] = useState(props.params.id);
     const [availability, setAvailability] = useState(null);
     return(
         <View>
