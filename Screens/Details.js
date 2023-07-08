@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Image, ImageBackground, Text, View } from "react-native";
+import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, View } from "react-native";
 import { StyleSheet } from "react-native";
 
 
@@ -31,12 +31,21 @@ const Details =(props)=>{
     }
     return(
         <ImageBackground  style={styles.container}
-        blurRadius={5}
-        resizeMode="cover"
-        source={{uri: info.image}}
-
+            blurRadius={5}
+            resizeMode="cover"
+            source={{uri: info.image}}
         >
-
+                <Image style={styles.imagContainer}
+                    resizeMode="contain"
+                    source={{uri: info.image}}
+                />
+            <ScrollView>
+                <View style={styles.infoContainer}>
+                    <Text>
+                        {info.title}
+                    </Text>
+                </View>
+            </ScrollView>
         </ImageBackground>
     )
 }
@@ -44,9 +53,8 @@ const Details =(props)=>{
 const styles = StyleSheet.create({
     container: {
         flex:1 ,
-        alignContent:"center",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent:"flex-start",
     },
     activityStyle:{
         flex: 1,
@@ -55,9 +63,19 @@ const styles = StyleSheet.create({
         backgroundColor: '#181D31',
     },
     imagContainer:{
-        height: 300,
-        width: 400,
-    }
+        marginTop: 50,
+        height: 296,
+        width: 200,
+        borderRadius: 10
+    },
+    infoContainer:{
+        marginTop: 10,
+        backgroundColor: 'hsla(0, 0%, 0%, 0.45)',
+        borderRadius: 20,
+        width: 360,
+        height: 440,
+    },
+    
 })
 
 export default Details;
