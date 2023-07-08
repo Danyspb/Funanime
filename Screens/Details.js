@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
-
+import { ActivityIndicator, Image, ImageBackground, Text, View } from "react-native";
 import { StyleSheet } from "react-native";
-import DetailsPreview from "../Preview/DetailsPreview";
+
 
 
 const Details =(props)=>{
@@ -25,41 +24,39 @@ const Details =(props)=>{
 
     },[]);
 
-    
-    const getInfo =()=>{
-
-        if(loading){
-            return<View >
-                  <ActivityIndicator size={"large"} color={"#00ff00"}/>
-                </View>
-        }
-        return(
-            <View>
-                <FlatList 
-                    data={info}
-                    renderItem={({item})=>
-                     <DetailsPreview 
-                       key={item.id}
-                       
-                    />}
-                />
-            </View>
-        )
-    }
-
-    return(
-        <View style={styles.container}>
-            {getInfo()}
+    if(loading){
+        return<View style={styles.activityStyle}>
+            <ActivityIndicator size={"large"} color={"#00ff00"} />
         </View>
+    }
+    return(
+        <ImageBackground  style={styles.container}
+        blurRadius={5}
+        resizeMode="cover"
+        source={{uri: info.image}}
+
+        >
+
+        </ImageBackground>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex:1 ,
+        alignContent:"center",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    activityStyle:{
+        flex: 1,
+        justifyContent: "center",
+        alignContent: "center",
         backgroundColor: '#181D31',
-       
-
+    },
+    imagContainer:{
+        height: 300,
+        width: 400,
     }
 })
 

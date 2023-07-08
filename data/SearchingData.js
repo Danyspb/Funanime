@@ -50,7 +50,6 @@ const SearchData = () =>{
                     date={item.releaseDate}
                     type={item.subOrDub}
                     link={item.url}
-                    
                     /> 
                 }
                 />

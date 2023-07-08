@@ -40,6 +40,7 @@ const RecentAnime = () =>{
                 </Text>
                 <FlatList
                 scrollEnabled={false}
+                showsVerticalScrollIndicator={false}
                 numColumns={3}
                 data={response}
                 renderItem={({item})=>

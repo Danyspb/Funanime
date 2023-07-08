@@ -6,11 +6,9 @@ import { navigationRef } from '../utils/RootNavigation';
 
 const AppNavigation = () =>{
     return (
-
        <NavigationContainer ref={navigationRef}>
             <MainNavigation />
        </NavigationContainer>
-       
     )
 }
 
