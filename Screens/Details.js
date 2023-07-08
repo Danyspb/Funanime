@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, Text, View } from "react-native";
+import DetailsPreview from "../Preview/DetailsPreview";
 
 
 const Details =(props)=>{
@@ -31,6 +32,22 @@ const Details =(props)=>{
         return(
             <FlatList 
             data={info}
+            renderItem={({item})=><
+            DetailsPreview 
+            key={item.id}
+            title={item.title}
+            id={item.id}
+            image={item.image}
+            description={item.description}
+            listEpisode={item.episodes}
+            numEpis={item.totalEpisodes}
+            otherTitle={item.otherName}
+            sortie={item.releaseDate}
+            status={item.status}
+            subOrDub={item.subOrDub}
+            genres={item.genres}
+            types={item.type}
+              />}
             />
         )
     }
