@@ -9,7 +9,7 @@ const Home = () =>{
     return(
         
         <View style={styles.container}>
-            <ScrollView >
+            <ScrollView>
                 <Films />
                 <RecentAnime />
             </ScrollView>

@@ -39,6 +39,7 @@ const RecentAnime = () =>{
                     Recent Episodes : 
                 </Text>
                 <FlatList
+                scrollEnabled={false}
                 numColumns={3}
                 data={response}
                 renderItem={({item})=>
