@@ -33,6 +33,7 @@ const SearchPreview = ({id, title, link, picture, date, type}) =>{
 }
 
 const styles = StyleSheet.create({
+   
     card:{
         marginTop: 10,
         width: 120,

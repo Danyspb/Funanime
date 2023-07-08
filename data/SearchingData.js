@@ -59,8 +59,8 @@ const SearchData = () =>{
     }
 
     return (
-        <NativeBaseProvider >
-            <Box>
+        <NativeBaseProvider>
+            <Box style={{marginBottom: 70}}>
                 <View style={styles.container}>
                     <VStack style={{marginBottom: 15}}>
                         <Input 
