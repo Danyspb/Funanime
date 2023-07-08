@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 
 
 const Details =(props)=>{
@@ -17,18 +17,28 @@ const Details =(props)=>{
             (result) =>{
                 setLoading(false);
                 setInfo(result);
-                }
+            }
         )
 
     },[])
-    
-    console.log(info);
+
+    const getInfo =()=>{
+        if(loading){
+            return<View>
+                  <ActivityIndicator size={"large"} color={"#00ff00"} />
+                </View>
+        }
+        return(
+            <FlatList 
+            data={info}
+            />
+        )
+    }
+
    
     return(
         <View>
-            <Text>
-                Welcome to the details page : {id}
-            </Text>
+            {getInfo()}
         </View>
     )
 }
