@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
+
+import { StyleSheet } from "react-native";
 import DetailsPreview from "../Preview/DetailsPreview";
 
 
@@ -21,43 +23,44 @@ const Details =(props)=>{
             }
         )
 
-    },[])
+    },[]);
 
+    
     const getInfo =()=>{
+
         if(loading){
-            return<View>
-                  <ActivityIndicator size={"large"} color={"#00ff00"} />
+            return<View >
+                  <ActivityIndicator size={"large"} color={"#00ff00"}/>
                 </View>
         }
         return(
-            <FlatList 
-            data={info}
-            renderItem={({item})=><
-            DetailsPreview 
-            key={item.id}
-            title={item.title}
-            id={item.id}
-            image={item.image}
-            description={item.description}
-            listEpisode={item.episodes}
-            numEpis={item.totalEpisodes}
-            otherTitle={item.otherName}
-            sortie={item.releaseDate}
-            status={item.status}
-            subOrDub={item.subOrDub}
-            genres={item.genres}
-            types={item.type}
-              />}
-            />
+            <View>
+                <FlatList 
+                    data={info}
+                    renderItem={({item})=>
+                     <DetailsPreview 
+                       key={item.id}
+                       
+                    />}
+                />
+            </View>
         )
     }
 
-   
     return(
-        <View>
+        <View style={styles.container}>
             {getInfo()}
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex:1 ,
+        backgroundColor: '#181D31',
+       
+
+    }
+})
 
 export default Details;
