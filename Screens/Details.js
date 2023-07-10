@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, Image, ImageBackground, ScrollView, Text, View } from "react-native";
 import { StyleSheet } from "react-native";
 
 
@@ -24,13 +24,16 @@ const Details =(props)=>{
 
     },[]);
 
+   
+
     if(loading){
         return<View style={styles.activityStyle}>
             <ActivityIndicator size={"large"} color={"#00ff00"} />
         </View>
     }
     return(
-        <ImageBackground  style={styles.container}
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <ImageBackground  style={styles.container}
             blurRadius={5}
             resizeMode="cover"
             source={{uri: info.image}}
@@ -39,10 +42,8 @@ const Details =(props)=>{
                     resizeMode="contain"
                     source={{uri: info.image}}
                 />
-            <ScrollView>
-                <ScrollView 
-                    showsVerticalScrollIndicator={false}
-                style={styles.infoContainer}>
+            <View >
+                <View style={styles.infoContainer}>
                     <Text style={styles.titleStyle}>
                         {
                             info.title ? (info.title.length > 20 ? info.title.slice(0, 25) + "..." : info.title) : true
@@ -66,14 +67,19 @@ const Details =(props)=>{
                             {info.status}
                         </Text>
                     </View>
-                    <View style={styles.descStyle}>
+                    <View style={styles.descContainStyle}>
                         <Text style={styles.descTextStyle}>
                             {info.description}
                         </Text>
                     </View>
-                </ScrollView>
-            </ScrollView>
+                    <View>
+                       
+                    </View>
+                </View>
+            </View>
         </ImageBackground>
+        </ScrollView>
+        
     )
 }
 
@@ -92,16 +98,16 @@ const styles = StyleSheet.create({
     },
     imagContainer:{
         marginTop: 50,
-        height: 296,
-        width: 200,
+        marginBottom: 10,
+        height: 300,
+        width: 250,
         borderRadius: 10
     },
     infoContainer:{
         marginTop: 10,
         backgroundColor: 'hsla(0, 0%, 0%, 0.45)',
         borderRadius: 20,
-        width: 360,
-        height: 440,
+        margin: 5
     },
     titleStyle:{
         marginTop: 5,
@@ -112,7 +118,7 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline"
     },
     genreStyles:{
-        color: 'gainsboro',
+        color: 'white',
         fontSize: 15,
         fontWeight: "bold",
         textAlign: 'center',
@@ -134,8 +140,9 @@ const styles = StyleSheet.create({
         marginLeft: 4,
         marginRight: 4
     },
-    descStyle:{
-        margin: 15,
+    descContainStyle:{
+        margin: 10,
+        marginTop: 20,
         borderStyle: "solid",
         borderColor: 'white',
         borderWidth: 1.5,
