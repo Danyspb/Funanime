@@ -40,7 +40,9 @@ const Details =(props)=>{
                     source={{uri: info.image}}
                 />
             <ScrollView>
-                <View style={styles.infoContainer}>
+                <ScrollView 
+                    showsVerticalScrollIndicator={false}
+                style={styles.infoContainer}>
                     <Text style={styles.titleStyle}>
                         {
                             info.title ? (info.title.length > 20 ? info.title.slice(0, 25) + "..." : info.title) : true
@@ -64,8 +66,12 @@ const Details =(props)=>{
                             {info.status}
                         </Text>
                     </View>
-                    
-                </View>
+                    <View style={styles.descStyle}>
+                        <Text style={styles.descTextStyle}>
+                            {info.description}
+                        </Text>
+                    </View>
+                </ScrollView>
             </ScrollView>
         </ImageBackground>
     )
@@ -75,7 +81,7 @@ const styles = StyleSheet.create({
     container: {
         flex:1 ,
         alignItems: "center",
-        justifyContent:"flex-start",
+        
     },
     activityStyle:{
         flex: 1,
@@ -103,6 +109,7 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight:'bold',
         textAlign :"center",
+        textDecorationLine: "underline"
     },
     genreStyles:{
         color: 'gainsboro',
@@ -120,12 +127,28 @@ const styles = StyleSheet.create({
     },
     extraInfo:{
         color: 'white',
-        
-        backgroundColor: 'blue',
+        backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
         padding: 10,
+        fontWeight: "bold",
         borderRadius: 25,
         marginLeft: 4,
         marginRight: 4
+    },
+    descStyle:{
+        margin: 15,
+        borderStyle: "solid",
+        borderColor: 'white',
+        borderWidth: 1.5,
+        borderRadius: 8,
+        justifyContent: "center",
+        backgroundColor: 'hsla(216, 74%, 48%, 0.47)'
+    },
+    descTextStyle:{
+        color: 'white',
+        lineHeight: 20,
+        marginLeft: 8,
+        marginTop: 5,
+        marginBottom: 7
     }
     
 })
