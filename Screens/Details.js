@@ -41,8 +41,10 @@ const Details =(props)=>{
                 />
             <ScrollView>
                 <View style={styles.infoContainer}>
-                    <Text>
-                        {info.title}
+                    <Text style={styles.titleStyle}>
+                        {
+                            info.title ? (info.title.length > 20 ? info.title.slice(0, 25) + "..." : info.title) : true
+                        }
                     </Text>
                 </View>
             </ScrollView>
@@ -75,6 +77,14 @@ const styles = StyleSheet.create({
         width: 360,
         height: 440,
     },
+    titleStyle:{
+        marginTop: 5,
+        fontSize : 20,
+        color: 'white',
+        fontWeight:'bold',
+        textAlign :"center",
+
+    }
     
 })
 
