@@ -34,7 +34,7 @@ const Details =(props)=>{
     return(
         <ScrollView showsVerticalScrollIndicator={false}>
             <ImageBackground  style={styles.container}
-            blurRadius={5}
+            blurRadius={3}
             resizeMode="cover"
             source={{uri: info.image}}
         >
@@ -46,7 +46,7 @@ const Details =(props)=>{
                 <View style={styles.infoContainer}>
                     <Text style={styles.titleStyle}>
                         {
-                            info.title ? (info.title.length > 20 ? info.title.slice(0, 25) + "..." : info.title) : true
+                            info.title ? (info.title.length > 20 ? info.title.slice(0, 21) + "..." : info.title) : true
                         }
                     </Text>
                     <Text style={styles.genreStyles}>
@@ -99,15 +99,18 @@ const styles = StyleSheet.create({
     imagContainer:{
         marginTop: 50,
         marginBottom: 10,
-        height: 300,
-        width: 250,
-        borderRadius: 10
+        height: 340,
+        width: 275,
+        borderRadius: 10,
+        
     },
     infoContainer:{
         marginTop: 10,
         backgroundColor: 'hsla(0, 0%, 0%, 0.45)',
         borderRadius: 20,
-        margin: 5
+        margin: 5,
+        paddingBottom: 500,
+     
     },
     titleStyle:{
         marginTop: 5,
@@ -115,7 +118,8 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight:'bold',
         textAlign :"center",
-        textDecorationLine: "underline"
+        textDecorationLine: "underline",
+       
     },
     genreStyles:{
         color: 'white',
@@ -130,6 +134,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         marginTop: 15,
+        
     },
     extraInfo:{
         color: 'white',
@@ -138,14 +143,17 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         borderRadius: 25,
         marginLeft: 4,
-        marginRight: 4
+        marginRight: 4,
+        borderColor: 'red',
+        borderWidth: 1.5,
+        
     },
     descContainStyle:{
         margin: 10,
         marginTop: 20,
         borderStyle: "solid",
-        borderColor: 'white',
-        borderWidth: 1.5,
+        borderColor: 'red',
+        borderWidth: 0.5,
         borderRadius: 8,
         justifyContent: "center",
         backgroundColor: 'hsla(216, 74%, 48%, 0.47)'
