@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Image, ImageBackground, ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, Text, View } from "react-native";
 import { StyleSheet } from "react-native";
 
 
 
 const Details =(props)=>{
 
-    const [id, setId] = useState(props.route.params.id);
-    const [info, setInfo] = useState([]);
-    const [loading, setLoading] = useState([]);
+    let [id, setId] = useState(props.route.params.id);
+    let [info, setInfo] = useState([]);
+    let [loading, setLoading] = useState([]);
 
     const url = `https://api.consumet.org/anime/gogoanime/info/${id}`;
 
@@ -25,19 +25,22 @@ const Details =(props)=>{
     },[]);
 
    
-
+    
     if(loading){
         return<View style={styles.activityStyle}>
             <ActivityIndicator size={"large"} color={"#00ff00"} />
         </View>
     }
     return(
+
         <ScrollView showsVerticalScrollIndicator={false}>
+            
             <ImageBackground  style={styles.container}
             blurRadius={3}
             resizeMode="cover"
             source={{uri: info.image}}
         >
+
                 <Image style={styles.imagContainer}
                     resizeMode="contain"
                     source={{uri: info.image}}
@@ -69,10 +72,19 @@ const Details =(props)=>{
                     </View>
                     <View style={styles.descContainStyle}>
                         <Text style={styles.descTextStyle}>
-                            {info.description}
+                        {
+                             info.description
+                        }
                         </Text>
                     </View>
                     <View>
+                        <Text style={{color: 'white', fontSize: 20}}>
+                            {
+                                info.episodes?.map((item)=>{
+                                    return<Text key={item.id}>{item.number}</Text>
+                                })
+                            }
+                        </Text>
                        
                     </View>
                 </View>
@@ -110,6 +122,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         margin: 5,
         paddingBottom: 500,
+        width: '98%'
      
     },
     titleStyle:{

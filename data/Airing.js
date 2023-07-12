@@ -11,7 +11,7 @@ const Films = ()=>{
     let [isloading, setIsLoading] = useState(true)
     let [error, setError] = useState();
     let [response, setResponse] = useState([]);
-
+    
     useEffect(()=> {
         fetch(url)
         .then((res) => res.json())
