@@ -77,15 +77,12 @@ const Details =(props)=>{
                         }
                         </Text>
                     </View>
-                    <View>
-                        <Text style={{color: 'white', fontSize: 20}}>
+                    <View style={styles.episodeContainer}>
                             {
                                 info.episodes?.map((item)=>{
-                                    return<Text key={item.id}>{item.number}</Text>
+                                    return<Text style={styles.episodeStyle} key={item.id}>{item.number}</Text>
                                 })
                             }
-                        </Text>
-                       
                     </View>
                 </View>
             </View>
@@ -169,7 +166,7 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderRadius: 8,
         justifyContent: "center",
-        backgroundColor: 'hsla(216, 74%, 48%, 0.47)'
+        backgroundColor: 'hsla(237, 100%, 50%, 0.37)'
     },
     descTextStyle:{
         color: 'white',
@@ -177,6 +174,30 @@ const styles = StyleSheet.create({
         marginLeft: 8,
         marginTop: 5,
         marginBottom: 7
+    },
+    episodeContainer:{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        margin: 10,
+        padding: 10,
+        borderStyle: "solid",
+        borderColor: 'red',
+        borderWidth: 0.5,
+        borderRadius: 8,
+    },
+    episodeStyle:{
+        color: 'white',
+        fontSize: 20,
+        backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
+        borderColor: 'red',
+        borderStyle: "solid",
+        borderWidth: 0.5,
+        padding: 15,
+        borderRadius: 10,
+
+        
+        
     }
     
 })
