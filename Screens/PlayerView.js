@@ -37,9 +37,8 @@ const PlayerView = ({route})=>{
            {
              link.sources?.map((item, index)=>{
                 return(
-                    <View>
+                    <View style={styles.videoStyle}>
                         <Video 
-                        style={styles.videoStyle}
                         key={index}
                         ref={video}
                         source={{uri: item.url}}
@@ -47,7 +46,10 @@ const PlayerView = ({route})=>{
                         resizeMode={ResizeMode.CONTAIN}
                         isLooping={false}
                         onPlaybackStatusUpdate={status => setStatus(() => status)}
-                    /> 
+                        /> 
+                        <Text>
+                            {item.quality}
+                        </Text>
                     </View>
                     
                 )
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     container:{
         flex: 1,
         alignContent: 'center',
-        justifyContent: "flex-end",
+        justifyContent: "center",
 
     },
     activityStyle:{
@@ -80,8 +82,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#181D31',
     },
     videoStyle:{
-        backgroundColor: 'red'
+        backgroundColor: 'red',
+        alignContent: 'center',
+        alignItems: "center",
+        justifyContent: 'center',
+        margin: 10,
+        padding: 25,
 
+
+        
     }
 })
 
