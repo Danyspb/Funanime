@@ -77,10 +77,17 @@ const Details =(props)=>{
                         }
                         </Text>
                     </View>
+                    <View style={{margin: 10}}>
+                        <Text style={styles.epiTotaView}>
+                            {`Total Episodes : ${info.totalEpisodes}`}    
+                        </Text>
+                    </View>
                     <View style={styles.episodeContainer}>
                             {
                                 info.episodes?.map((item)=>{
-                                    return<Text style={styles.episodeStyle} key={item.id}>{item.number}</Text>
+                                    return<Text style={styles.episodeStyle} key={item.id}>
+                                        {item.number}
+                                    </Text>
                                 })
                             }
                     </View>
@@ -179,8 +186,10 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        margin: 10,
-        padding: 10,
+        flexWrap: "wrap",
+        margin: 5,
+        marginBottom: 5,
+        padding: 5,
         borderStyle: "solid",
         borderColor: 'red',
         borderWidth: 0.5,
@@ -188,16 +197,21 @@ const styles = StyleSheet.create({
     },
     episodeStyle:{
         color: 'white',
-        fontSize: 20,
+        fontSize: 18,
+        marginTop: 5,
+        marginBottom: 5,
+        marginLeft: 5,
         backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
         borderColor: 'red',
         borderStyle: "solid",
         borderWidth: 0.5,
         padding: 15,
         borderRadius: 10,
-
-        
-        
+    }, 
+    epiTotaView: {
+        color: 'white',
+        fontSize: 19,
+        fontWeight: 'bold'
     }
     
 })
