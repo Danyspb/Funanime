@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
+import { navigate } from "../utils/RootNavigation";
 
 
 
@@ -23,8 +24,6 @@ const Details =(props)=>{
         )
 
     },[]);
-
-   
     
     if(loading){
         return<View style={styles.activityStyle}>
@@ -86,7 +85,7 @@ const Details =(props)=>{
                             {
                                 info.episodes?.map((item,index)=>{
                                     return<TouchableOpacity key={index} onPress={()=>{
-                                        console.log(item.id)
+                                        navigate('PlayerView',(item.id))
                                     }}>
                                          <Text style={styles.episodeStyle} >
                                                 {item.number}

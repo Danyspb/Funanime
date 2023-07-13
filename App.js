@@ -1,6 +1,6 @@
 
-import { StyleSheet, Text, View} from 'react-native';
-import 'react-native-gesture-handler'
+import { StyleSheet} from 'react-native';
+import 'react-native-gesture-handler';
 import AppNavigation from './Navigation/AppNavigation';
 import { SafeAreaProvider} from 'react-native-safe-area-context';
 
