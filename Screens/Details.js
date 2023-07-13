@@ -3,8 +3,6 @@ import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableO
 import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
 
-
-
 const Details =(props)=>{
 
     let [id, setId] = useState(props.route.params.id);
