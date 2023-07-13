@@ -23,6 +23,7 @@ const Details =(props)=>{
 
     },[]);
     
+
     if(loading){
         return<View style={styles.activityStyle}>
             <ActivityIndicator size={"large"} color={"#00ff00"} />
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
         height: 340,
         width: 275,
         borderRadius: 10,
-        transform: [{rotateY: '10deg'}, {rotateZ: '8deg'}],
+        
         
     },
     infoContainer:{
