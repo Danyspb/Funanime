@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 
 
 
 const Details =(props)=>{
 
+    console.log(props);
     let [id, setId] = useState(props.route.params.id);
     let [info, setInfo] = useState([]);
     let [loading, setLoading] = useState([]);
@@ -79,16 +80,16 @@ const Details =(props)=>{
                     </View>
                     <View style={{margin: 10}}>
                         <Text style={styles.epiTotaView}>
-                            {`Total Episodes : ${info.totalEpisodes}`}    
+                            {`Total Episodes : ${info.totalEpisodes}`} 
                         </Text>
                     </View>
                     <View style={styles.episodeContainer}>
                             {
-                                info.episodes?.map((item)=>{
-                                    return<TouchableOpacity onPress={()=>{
+                                info.episodes?.map((item,index)=>{
+                                    return<TouchableOpacity key={index} onPress={()=>{
                                         console.log(item.id)
                                     }}>
-                                         <Text style={styles.episodeStyle} key={item.id}>
+                                         <Text style={styles.episodeStyle} >
                                                 {item.number}
                                         </Text>
                                     </TouchableOpacity>
