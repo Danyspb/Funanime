@@ -6,7 +6,6 @@ import { StyleSheet } from "react-native";
 
 const Details =(props)=>{
 
-    console.log(props);
     let [id, setId] = useState(props.route.params.id);
     let [info, setInfo] = useState([]);
     let [loading, setLoading] = useState([]);
@@ -123,6 +122,7 @@ const styles = StyleSheet.create({
         height: 340,
         width: 275,
         borderRadius: 10,
+        transform: [{rotateY: '10deg'}, {rotateZ: '8deg'}],
         
     },
     infoContainer:{
@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         margin: 5,
         paddingBottom: 100,
+        
         
     },
     titleStyle:{
@@ -177,7 +178,8 @@ const styles = StyleSheet.create({
         borderWidth: 0.5,
         borderRadius: 8,
         justifyContent: "center",
-        backgroundColor: 'hsla(237, 100%, 50%, 0.37)'
+        backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
+        
     },
     descTextStyle:{
         color: 'white',

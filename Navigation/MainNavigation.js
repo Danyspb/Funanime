@@ -7,6 +7,7 @@ import Search from "../Screens/Search";
 import Download from "../Screens/Download";
 import { Ionicons } from '@expo/vector-icons';
 import Details from "../Screens/Details";
+import PlayerView from "../Screens/PlayerView";
 
 
 
@@ -78,6 +79,10 @@ const MainNavigation = () =>{
                 
                 }} />
             <Stack.Screen name="Details" component={Details} options={{
+                headerShown: false,
+                animationEnabled: true
+            }}/> 
+            <Stack.Screen name="PlayerView" component={PlayerView} options={{
                 headerShown: false,
                 animationEnabled: true
             }}/> 
