@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, Text, View } from "react-native";
+import { ActivityIndicator, Button, FlatList, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 
 
@@ -85,9 +85,13 @@ const Details =(props)=>{
                     <View style={styles.episodeContainer}>
                             {
                                 info.episodes?.map((item)=>{
-                                    return<Text style={styles.episodeStyle} key={item.id}>
-                                        {item.number}
-                                    </Text>
+                                    return<TouchableOpacity onPress={()=>{
+                                        console.log(item.id)
+                                    }}>
+                                         <Text style={styles.episodeStyle} key={item.id}>
+                                                {item.number}
+                                        </Text>
+                                    </TouchableOpacity>
                                 })
                             }
                     </View>
@@ -125,9 +129,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'hsla(0, 0%, 0%, 0.45)',
         borderRadius: 20,
         margin: 5,
-        paddingBottom: 500,
-        width: '98%'
-     
+        paddingBottom: 100,
+        
     },
     titleStyle:{
         marginTop: 5,
