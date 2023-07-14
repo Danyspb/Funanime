@@ -1,6 +1,6 @@
 import { ResizeMode, Video } from "expo-av";
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ActivityIndicator, Button } from "react-native";
+import { View, StyleSheet, ActivityIndicator, Button } from "react-native";
 
 
 
@@ -34,32 +34,27 @@ const PlayerView = ({route})=>{
 
     return(
         <View style={styles.container}>  
+        
            {
-             link.sources?.map((item, index)=>{
-                return(
-                    <View style={styles.videoStyle}>
-                        <Video 
-                        key={index}
-                        ref={video}
-                        source={{uri: item.url}}
-                        useNativeControls
-                        resizeMode={ResizeMode.CONTAIN}
-                        isLooping={false}
-                        onPlaybackStatusUpdate={status => setStatus(() => status)}
-                        /> 
-                        <Text>
-                            {item.quality}
-                        </Text>
-                    </View>
-                    
-                )
-             })
+            link.sources?.map((item,index)=>{
+                return<Video key={index}
+                    ref={video}
+                    style={styles.video}
+                    source={{
+                        uri: item.url
+                    }}
+                    useNativeControls
+                    resizeMode={ResizeMode.CONTAIN}
+                    isLooping={true}
+                    onPlaybackStatusUpdate={status => setStatus(() => status)}
+                />
+            })
            }
            <View>
                 <Button 
                     title={status.isPlaying ? 'Pause' : 'Play'}
                     onPress={()=>
-                        status.isPlaying ?  video.current.pauseAsync() : video.current.playAsync()
+                        status.isPlaying ?  video.current.pauseAsync(3000) : video.current.playAsync()
                     }
                 /> 
            </View>
@@ -73,6 +68,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignContent: 'center',
         justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: 'blue'
 
     },
     activityStyle:{
@@ -81,15 +78,12 @@ const styles = StyleSheet.create({
         alignContent: "center",
         backgroundColor: '#181D31',
     },
-    videoStyle:{
-        backgroundColor: 'red',
-        alignContent: 'center',
-        alignItems: "center",
-        justifyContent: 'center',
-        margin: 10,
-        padding: 25,
-
-
+    video:{
+       margin: 5,
+       height: "40%",
+       width: '90%',
+       justifyContent: 'center',
+       
         
     }
 })
