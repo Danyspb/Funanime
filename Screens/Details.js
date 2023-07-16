@@ -41,7 +41,7 @@ const Details =(props)=>{
         >
 
                 <Image style={styles.imagContainer}
-                    resizeMode="contain"
+                    resizeMode="stretch"
                     source={{uri: info.image}}
                 />
             <View >
@@ -148,7 +148,8 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         textAlign: 'center',
         borderRadius: 10,
-        marginTop: 8
+        marginTop: 8,
+        marginLeft: 5
     },
     extraInfoContainer:{
         display: "flex",
@@ -191,6 +192,8 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
+        margin: 5,
+        justifyContent: 'space-evenly',
         marginBottom: 5,
         padding: 5,
         borderStyle: "solid",
@@ -203,7 +206,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18,
         marginTop: 5,
-        marginLeft: 15,
         marginBottom: 5,
         backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
         borderColor: 'red',
