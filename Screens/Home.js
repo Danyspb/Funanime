@@ -7,7 +7,7 @@ import Films from "../data/Airing";
 const Home = () =>{
 
     return(
-        
+    
         <View style={styles.container}>
             <ScrollView>
                 <Films />

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
+import { Center } from "native-base";
 
 const Details =(props)=>{
 
@@ -189,9 +190,7 @@ const styles = StyleSheet.create({
     episodeContainer:{
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
         flexWrap: "wrap",
-        margin: 5,
         marginBottom: 5,
         padding: 5,
         borderStyle: "solid",
@@ -200,17 +199,19 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     episodeStyle:{
+        textAlign: 'center',
         color: 'white',
         fontSize: 18,
         marginTop: 5,
+        marginLeft: 15,
         marginBottom: 5,
-        marginLeft: 5,
         backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
         borderColor: 'red',
         borderStyle: "solid",
         borderWidth: 0.5,
-        padding: 15,
+        padding: 10,
         borderRadius: 10,
+        alignContent: 'center'
     }, 
     epiTotaView: {
         color: 'white',
