@@ -45,20 +45,25 @@ const PlayerView = ({route})=>{
                                 style={styles.video}
                                 source={{uri: item.url}}
                                 useNativeControls
-                                resizeMode={ResizeMode.COVER}
+                                resizeMode={ResizeMode.COVER }
                                 isLooping
                                 onPlaybackStatusUpdate={status => setStatus(() => status)}
                         />
                     })
                 }
             
-           <View>
+           <View style={styles.buttonViewStyle}>
                 <Button 
                     title={status.isPlaying ? 'Pause' : 'Play'}
                     onPress={()=>
                         status.isPlaying ?  video.current.pauseAsync() : video.current.playAsync()
                     }
                 /> 
+                <Button
+                title="Download"
+                color={'purple'}
+                    onPress={''}
+                 />
            </View>
         </View>
     )
@@ -68,9 +73,7 @@ const styles = StyleSheet.create({
 
     container:{
         flex: 3,
-
         backgroundColor: '#181D31'
-
     },
    
     activityStyle:{
@@ -81,8 +84,16 @@ const styles = StyleSheet.create({
     },
     video:{
        flex: 1,
-      
     },
+    buttonViewStyle:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 25,
+        marginLeft: 20,
+        marginRight: 20,
+        top: -50
+
+    }
 
 })
 
