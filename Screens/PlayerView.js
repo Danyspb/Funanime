@@ -1,6 +1,6 @@
 import { ResizeMode, Video } from "expo-av";
 import React, { useEffect, useState } from "react";
-import { View,Text, StyleSheet, ActivityIndicator,ScrollView, Button, SafeAreaView, TouchableOpacity, Modal, Dimensions } from "react-native";
+import { View,Text, StyleSheet, ActivityIndicator, Button} from "react-native";
 
 
 
@@ -26,9 +26,6 @@ const PlayerView = ({route})=>{
         )
     },[]);
 
-
-    
-
     if(loading){
         return<View style={styles.activityStyle}>
             <ActivityIndicator size={"large"} color={"#00ff00"} />
@@ -45,7 +42,7 @@ const PlayerView = ({route})=>{
                                 style={styles.video}
                                 source={{uri: item.url}}
                                 useNativeControls
-                                resizeMode={ResizeMode.COVER }
+                                resizeMode={ResizeMode.CONTAIN}
                                 isLooping
                                 onPlaybackStatusUpdate={status => setStatus(() => status)}
                         />
