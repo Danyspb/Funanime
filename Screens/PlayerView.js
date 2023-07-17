@@ -80,7 +80,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#181D31',
     },
     video:{
-       flex: 1,
+        alignContent: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1
     },
     buttonViewStyle:{
         flexDirection: 'row',
