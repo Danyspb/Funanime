@@ -1,5 +1,5 @@
 [![Home.png](https://i.postimg.cc/Mp3RJjmm/Home.png)](https://postimg.cc/5XvjwyGX)
-![show(./show/Details.png)]
+[![show(./show/Details.png)]
 ![show(./show/search.png)]
 [![Player.png](https://i.postimg.cc/YC2rfngd/Player.png)](https://postimg.cc/7fcrqNKz)
 
