@@ -27,7 +27,11 @@ const Details =(props)=>{
 
     if(loading){
         return<View style={styles.activityStyle}>
-            <ActivityIndicator size={"large"} color={"#00ff00"} />
+            <ActivityIndicator size={"large"} color={"#00ff00"}
+            />
+            <Text style={{color: 'white', fontWeight: 'bold', left:175}}>
+                Loading
+            </Text>
         </View>
     }
     return(
@@ -113,6 +117,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignContent: "center",
         backgroundColor: '#181D31',
+        
         
     },
     imagContainer:{
