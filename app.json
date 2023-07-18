@@ -4,12 +4,12 @@
     "slug": "FunAnime",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/picture/ican.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/picture/iconSplash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "1D5D9B"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,8 +22,8 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/picture/ican.png",
+        "backgroundColor": "rgba(88, 149, 199, 0.44)"
       }
     },
     "web": {

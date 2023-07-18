@@ -8,7 +8,7 @@ import { navigate } from "../utils/RootNavigation";
 
 const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
 
-    const [modalVisible,SetModalVisible] = useState(false)
+    const [modalVisible,setModalVisible] = useState(true)
     
 
     return(
@@ -17,7 +17,11 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
         onPress={()=>{
             navigate('Details',{id})  
         }}
-        
+        onLongPress={()=>{
+            return(
+                console.log('helo i am pressing')
+            )
+        }}
         >
             <View>
                 <View style={styles.card}>
