@@ -2,11 +2,13 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 
-const Favoris = (props) =>{
+const Favoris = () =>{
+    let favs = [];
+    
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>
-                Welcome to my Favoris page
+            <Text style={styles.text}> 
+                not available at the moment !!!
             </Text>
         </View>
     )

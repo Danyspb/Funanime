@@ -5,7 +5,7 @@ const Download = () =>{
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                welcome to my Download Page
+                not available at the moment !!!
             </Text>
         </View>
     )
