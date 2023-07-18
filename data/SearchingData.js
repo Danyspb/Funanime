@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Dimensions, StyleSheet, View } from "react-native";
 import SearchPreview from "../Preview/SearchPreview";
-import { ActivityIndicator } from "react-native";
+import { ActivityIndicator, Text } from "react-native";
 import { FlatList } from "react-native";
 import { VStack, Input, Icon, NativeBaseProvider, Box } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -32,8 +32,11 @@ const SearchData = () =>{
     const getSearchAnime = () =>{
        
         if(loading){
-            return<View>
-                  <ActivityIndicator size={"large"} color={"#00ff00"} />
+            return<View style={{marginBottom: 300}}>
+                  <ActivityIndicator size={"large"} color={"#00ff00"}  />
+                  <Text style={{color: 'white', fontWeight: 'bold', left:3}}>
+                    Loading
+                </Text>
             </View>
         }
         return(
@@ -88,7 +91,12 @@ const styles = StyleSheet.create({
         marginTop: 20,
         alignItems:"center",
     }, 
-   
+    activityStyle:{
+        flex: 1,
+        justifyContent: "center",
+        alignContent: "center",
+        backgroundColor: '#181D31',
+    }
 
 })
 

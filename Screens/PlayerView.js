@@ -29,6 +29,9 @@ const PlayerView = ({route})=>{
     if(loading){
         return<View style={styles.activityStyle}>
             <ActivityIndicator size={"large"} color={"#00ff00"} />
+            <Text style={{color: 'white', fontWeight: 'bold', left:175}}>
+                Loading
+            </Text>
         </View>
     }
 
