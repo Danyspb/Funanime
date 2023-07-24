@@ -1,7 +1,6 @@
 import { ResizeMode, Video } from "expo-av";
 import React, { useEffect, useState } from "react";
-import { View,Text, StyleSheet, ActivityIndicator, Button} from "react-native";
-
+import { View,Text, StyleSheet, ActivityIndicator, Button, Alert} from "react-native";
 
 
 
@@ -12,6 +11,7 @@ const PlayerView = ({route})=>{
     let [loading, setLoading] = useState([]);
     let video = React.useRef(null);
     let [status, setStatus] = React.useState({});
+    
 
     const url = `https://api.consumet.org/anime/gogoanime/watch/${serverID}`;
 
@@ -26,6 +26,7 @@ const PlayerView = ({route})=>{
         )
     },[]);
 
+
     if(loading){
         return<View style={styles.activityStyle}>
             <ActivityIndicator size={"large"} color={"#00ff00"} />
@@ -37,6 +38,8 @@ const PlayerView = ({route})=>{
 
     return(
         <View style={styles.container}>
+
+           
                 {
                     link.sources?.map((item,index)=>{
                         return<Video 
@@ -60,10 +63,15 @@ const PlayerView = ({route})=>{
                     }
                 /> 
                 <Button
+                title="quality"
+                    color={'grey'}
+                 />
+                <Button
                 title="Download"
                 color={'purple'}
                     onPress={''}
                  />
+
            </View>
         </View>
     )
@@ -95,8 +103,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         top: -50
-
-    }
+    },
 
 })
 

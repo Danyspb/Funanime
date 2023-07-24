@@ -43,7 +43,8 @@ const AiringPreview = ({title, image, genres, id }) =>{
 const styles = StyleSheet.create({
     container:{
         marginTop: 15,
-        width: width,
+        width: width -15,
+        marginLeft: 8,
         height: 250,
         backgroundColor: 'hsla(341, 100%, 66%, 0.16)',
         borderRadius: 25,
