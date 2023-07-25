@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Dimensions, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
-import { Center } from "native-base";
+
+
+
+
+const Height = Dimensions.get('screen')
+
 
 const Details =(props)=>{
 
@@ -42,6 +47,7 @@ const Details =(props)=>{
             blurRadius={3}
             resizeMode="cover"
             source={{uri: info.image}}
+            
         >
 
                 <Image style={styles.imagContainer}
@@ -110,6 +116,7 @@ const styles = StyleSheet.create({
     container: {
         flex:1 ,
         alignItems: "center",
+        paddingBottom: 100,
         
     },
     activityStyle:{
