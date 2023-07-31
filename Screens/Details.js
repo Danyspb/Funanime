@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         marginLeft: 4,
         marginRight: 4,
-        borderColor: 'red',
+        borderColor: 'cyan',
         borderWidth: 1.5,
         
     },
@@ -186,8 +186,8 @@ const styles = StyleSheet.create({
         margin: 10,
         marginTop: 20,
         borderStyle: "solid",
-        borderColor: 'red',
-        borderWidth: 0.5,
+        borderColor: 'cyan',
+        borderWidth: 1,
         borderRadius: 8,
         justifyContent: "center",
         backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
@@ -201,7 +201,6 @@ const styles = StyleSheet.create({
         marginBottom: 7
     },
     episodeContainer:{
-        display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
         margin: 5,
@@ -209,8 +208,8 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         padding: 5,
         borderStyle: "solid",
-        borderColor: 'red',
-        borderWidth: 0.5,
+        borderColor: 'cyan',
+        borderWidth: 1,
         borderRadius: 8,
     },
     episodeStyle:{
@@ -220,9 +219,9 @@ const styles = StyleSheet.create({
         marginTop: 5,
         marginBottom: 5,
         backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
-        borderColor: 'red',
+        borderColor: 'cyan',
         borderStyle: "solid",
-        borderWidth: 0.5,
+        borderWidth: 1,
         padding: 10,
         borderRadius: 10,
         alignContent: 'center'
