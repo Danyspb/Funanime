@@ -56,16 +56,17 @@ const PlayerView = ({route})=>{
                 }
             
            <View style={styles.buttonViewStyle}>
+                 
+                <Button
+                title="quality"
+                    color={'grey'}
+                 />
                 <Button 
                     title={status.isPlaying ? 'Pause' : 'Play'}
                     onPress={()=>
                         status.isPlaying ?  video.current.pauseAsync() : video.current.playAsync()
                     }
-                /> 
-                <Button
-                title="quality"
-                    color={'grey'}
-                 />
+                />
                 <Button
                 title="Download"
                 color={'purple'}

@@ -7,8 +7,6 @@ import { navigate } from "../utils/RootNavigation";
 
 
 const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
-
-    const [modalVisible,setModalVisible] = useState(true)
     
 
     return(
@@ -23,7 +21,7 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
             )
         }}
         >
-            <View>
+            <View >
                 <View style={styles.card}>
                     <View >
                         <Image style={styles.cardPic}
@@ -51,6 +49,7 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
 const styles = StyleSheet.create({
     card:{
         marginTop: 10,
+        marginLeft: 10,
         width: 120,
         height: 160,
         margin: 5,
@@ -101,31 +100,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
 
-
-
-
-
-
-    centeredView: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
-      },
-      modalView: {
-        margin: 20,
-        backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 35,
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-      }
 })
 export default RecentEpisodePreview;
