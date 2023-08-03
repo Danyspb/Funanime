@@ -5,7 +5,6 @@ import RecentEpisodePreview from "../Preview/RecentEpisodePreview";
 
 const url = 'https://api.consumet.org/anime/gogoanime/recent-episodes';
 
-
 const RecentAnime = () =>{
 
     let [isloading, setIsloading] = useState(true);
@@ -82,7 +81,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         alignContent: 'center'
-        
     },
 })
 

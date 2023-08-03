@@ -6,6 +6,7 @@ import { ActivityIndicator, Text } from "react-native";
 import { FlatList } from "react-native";
 import { VStack, Input, Icon, NativeBaseProvider, Box } from "native-base";
 import { MaterialIcons } from "@expo/vector-icons";
+import LottieView from 'lottie-react-native';
 import useDebounce from "../utils/SearchUtility";
 
 var {width} = Dimensions.get("screen");
@@ -13,7 +14,7 @@ var {width} = Dimensions.get("screen");
 const SearchData = () =>{
 
     const [result, setResult] = useState([]);
-    const [search, setSearch] = useState(null); 
+    const [search, setSearch] = useState(''); 
     const [loading, setLoading] = useState(false);
     const debounceSearch = useDebounce(search, 300);
 
@@ -37,6 +38,16 @@ const SearchData = () =>{
                   <Text style={{color: 'white', fontWeight: 'bold', left:3}}>
                     Loading
                 </Text>
+            </View>
+        }
+        if(debounceSearch === ''){
+            return <View style={styles.animecontain}>
+                <LottieView  style={styles.animStyle}
+                    autoPlay
+                    loop
+                    source={require('../assets/animation.json')}
+                /> 
+                <Text style={styles.textStyl}>Search Something !!!</Text>
             </View>
         }
         return(
@@ -95,7 +106,26 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignContent: "center",
         backgroundColor: '#181D31',
+    },
+    animStyle: {
+        width: 200,
+        height: 200,
+        backgroundColor: '#181D31'
+    },
+    animecontain:{
+        justifyContent: 'center',
+        alignItems: 'center',
+        alignContent: 'center',
+        top: 90,
+    },
+    textStyl:{
+        color: 'white',
+        fontFamily: 'lobster2',
+        fontSize: 25,
+        marginBottom: 200,
+        marginTop: 20,
     }
+
 
 })
 
