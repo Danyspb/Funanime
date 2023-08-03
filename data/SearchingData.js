@@ -16,7 +16,7 @@ const SearchData = () =>{
     const [result, setResult] = useState([]);
     const [search, setSearch] = useState(''); 
     const [loading, setLoading] = useState(false);
-    const debounceSearch = useDebounce(search, 300);
+    const debounceSearch = useDebounce(search, 200);
 
     useEffect(()=>{
         async function fetchData(){

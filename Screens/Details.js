@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Dimensions, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
-import { useFonts } from "expo-font";
-
-
-const Height = Dimensions.get('screen')
+import LottieView from 'lottie-react-native';
 
 
 const Details =(props)=>{
@@ -13,11 +10,7 @@ const Details =(props)=>{
     let [id, setId] = useState(props.route.params.id);
     let [info, setInfo] = useState([]);
     let [loading, setLoading] = useState([]);
-    let [Fontload] = useFonts({
-        'lobster':require('../assets/fonts/Lobster-Regular.ttf'),
-        'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
-        'ultra': require('../assets/fonts/Ultra-Regular.ttf'),
-    })
+    
 
     const url = `https://api.consumet.org/anime/gogoanime/info/${id}`;
 
@@ -36,10 +29,13 @@ const Details =(props)=>{
 
     if(loading){
         return<View style={styles.activityStyle}>
-            <ActivityIndicator size={"large"} color={"#00ff00"}
-            />
-            <Text style={{color: 'white', fontWeight: 'bold', left:175}}>
-                Loading
+            <LottieView  style={styles.animStyle}
+                    autoPlay
+                    loop
+                    source={require('../assets/saku.json')}
+                /> 
+            <Text style={{color: 'white', top: 190, fontFamily: 'lobster2', fontSize: 25}}>
+                Loading...
             </Text>
         </View>
     }
@@ -125,8 +121,8 @@ const styles = StyleSheet.create({
     },
     activityStyle:{
         flex: 1,
-        justifyContent: "center",
-        alignContent: "center",
+        alignItems: 'center',
+        alignContent: 'center',
         backgroundColor: '#181D31',
         
         
@@ -238,6 +234,12 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 19,
         fontFamily: 'ultra'
+    },
+    animStyle: {
+        width: 300,
+        height: 300,
+        backgroundColor: '#181D31',
+        top: 100
     }
     
 })
