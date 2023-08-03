@@ -36,7 +36,7 @@ const RecentAnime = () =>{
             </View>
         }
         return(
-            <View>
+            <View style={styles.container}>
                 <Text style={styles.text}>
                     Recent Episodes : 
                 </Text>
@@ -75,8 +75,15 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         marginTop: 15,
         marginBottom: 15,
+        right: 120,
         
-      }
+      },
+      container:{
+        alignItems: 'center',
+        justifyContent: 'space-around',
+        alignContent: 'center'
+        
+    },
 })
 
 export default RecentAnime;

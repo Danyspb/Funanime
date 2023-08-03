@@ -52,7 +52,9 @@ const BottomNav = () =>{
                 tabBarIcon: ()=><Ionicons name="download" size={24} color="purple" />,
                 tabBarActiveBackgroundColor: "#E3ACF9",
                 headerStyle:{
-                    backgroundColor: 'purple'
+                    backgroundColor: 'purple',
+                    
+                    
                 }
             }} />
         </Tab.Navigator>

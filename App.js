@@ -1,4 +1,4 @@
-import react, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { StyleSheet} from 'react-native';
 import 'react-native-gesture-handler';
 import AppNavigation from './Navigation/AppNavigation';
@@ -10,7 +10,6 @@ import * as SplashScreen from 'expo-splash-screen';
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-
 
   let [Fontload] = useFonts({
     'sacramento': require('./assets/fonts/Sacramento-Regular.ttf'),

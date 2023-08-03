@@ -61,14 +61,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10,
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontFamily: 'prata'
     },
     labelAnime: {
         color: 'white',
         marginTop: -30,
         marginBottom: 15,
         paddingLeft: 20,
-        fontWeight: 'bold',
         fontSize: 25,
     },
     textLabel:{
@@ -76,7 +75,6 @@ const styles = StyleSheet.create({
         marginTop: -30,
         marginBottom: 15,
         paddingLeft: 20,
-        fontWeight: 'bold',
         fontSize: 25,
     },
     info:{
@@ -85,7 +83,7 @@ const styles = StyleSheet.create({
         marginTop: -15,
         borderBottomLeftRadius: 20,
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontFamily: 'abril',
         textAlignVertical: 'center'
     }
 })

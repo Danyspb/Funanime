@@ -1,10 +1,8 @@
 import React from "react";
-import {  Image, StyleSheet, Text } from "react-native";
+import {  Dimensions, Image, StyleSheet, Text } from "react-native";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { navigate } from "../utils/RootNavigation";
-
-
 
 
 const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
@@ -50,20 +48,13 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
 
 const styles = StyleSheet.create({
 
-    container:{
-        backgroundColor: 'blue',
-        justifyContent: 'center',
-        
-    },
     card:{
         marginTop: 10,
-        marginLeft: 5,
         width: 120,
         height: 160,
         margin: 5,
         marginBottom: 70,
-        
-
+    
     },
     cardPic:{
         alignItems: 'center',
@@ -71,8 +62,6 @@ const styles = StyleSheet.create({
         height: '100%',
         borderTopRightRadius: 20,
         borderBottomLeftRadius: 20,
-        
-
     },
     titre:{
         color: 'white',
