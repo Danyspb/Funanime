@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Dimensions, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
+import { useFonts } from "expo-font";
 
 
 const Height = Dimensions.get('screen')
@@ -12,6 +13,11 @@ const Details =(props)=>{
     let [id, setId] = useState(props.route.params.id);
     let [info, setInfo] = useState([]);
     let [loading, setLoading] = useState([]);
+    let [Fontload] = useFonts({
+        'lobster':require('../assets/fonts/Lobster-Regular.ttf'),
+        'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
+        'ultra': require('../assets/fonts/Ultra-Regular.ttf'),
+    })
 
     const url = `https://api.consumet.org/anime/gogoanime/info/${id}`;
 
@@ -147,7 +153,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize : 20,
         color: 'white',
-        fontWeight:'bold',
+        fontFamily: 'lobster',
         textAlign :"center",
         textDecorationLine: "underline",
        
@@ -155,11 +161,12 @@ const styles = StyleSheet.create({
     genreStyles:{
         color: 'white',
         fontSize: 15,
-        fontWeight: "bold",
+        fontFamily: 'playfaire',
         textAlign: 'center',
         borderRadius: 10,
         marginTop: 8,
-        marginLeft: 5
+        marginLeft: 5,
+        
     },
     extraInfoContainer:{
         display: "flex",
@@ -172,8 +179,9 @@ const styles = StyleSheet.create({
         color: 'white',
         backgroundColor: 'hsla(237, 100%, 50%, 0.37)',
         padding: 10,
-        fontWeight: "bold",
+        fontFamily: 'ultra',
         borderRadius: 25,
+        fontSize: 10,
         marginLeft: 4,
         marginRight: 4,
         borderColor: 'cyan',
@@ -196,7 +204,8 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         marginLeft: 8,
         marginTop: 5,
-        marginBottom: 7
+        marginBottom: 7,
+        fontFamily: 'playfaire'
     },
     episodeContainer:{
         flexDirection: "row",
@@ -221,13 +230,14 @@ const styles = StyleSheet.create({
         borderStyle: "solid",
         borderWidth: 1,
         padding: 10,
+        fontFamily: 'playfaire',
         borderRadius: 10,
         alignContent: 'center'
     }, 
     epiTotaView: {
         color: 'white',
         fontSize: 19,
-        fontWeight: 'bold'
+        fontFamily: 'ultra'
     }
     
 })

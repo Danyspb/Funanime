@@ -10,13 +10,9 @@ import { useFonts } from "expo-font";
 const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
     
     let [Fontload] = useFonts({
-        'vidaloka': require('../assets/fonts/Vidaloka-Regular.ttf'),
-        'sacramento': require('../assets/fonts/Sacramento-Regular.ttf'),
-        'lobster': require('../assets/fonts/Lobster-Regular.ttf'),
-        'lobster2':require('../assets/fonts/LobsterTwo-Regular.ttf'),
+        'ultra': require('../assets/fonts/Ultra-Regular.ttf'),
         'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
-        'dancing': require('../assets/fonts/DancingScript-Regular.ttf'),
-        'abril': require('../assets/fonts/AbrilFatface-Regular.ttf')
+        
     })
 
     return(
@@ -59,7 +55,7 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
 const styles = StyleSheet.create({
     card:{
         marginTop: 10,
-        marginLeft: 10,
+        marginLeft: 5,
         width: 120,
         height: 160,
         margin: 5,
@@ -107,7 +103,7 @@ const styles = StyleSheet.create({
         marginTop: -15,
         borderBottomLeftRadius: 20,
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontFamily: 'ultra',
     },
 
 })
