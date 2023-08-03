@@ -11,13 +11,9 @@ const { width} = Dimensions.get('screen');
 const AiringPreview = ({title, image, genres, id }) =>{
 
     let [Fontload] = useFonts({
-        'sacramento': require('../assets/fonts/Sacramento-Regular.ttf'),
-        'lobster': require('../assets/fonts/Lobster-Regular.ttf'),
-        'lobster2':require('../assets/fonts/LobsterTwo-Regular.ttf'),
-        'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
-        'dancing': require('../assets/fonts/DancingScript-Regular.ttf'),
-        'abril': require('../assets/fonts/AbrilFatface-Regular.ttf')
-    })
+    'lobster2':require('../assets/fonts/LobsterTwo-Regular.ttf'),
+    'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
+})
 
     
     return(
@@ -70,22 +66,20 @@ const styles = StyleSheet.create({
         marginLeft: '53%',
         marginTop: '-50%',
         color: 'white',
-        fontWeight: 'bold'
+        fontFamily: 'playfaire'
     },
     type: {
         fontSize: 20,
         fontFamily: 'lobster2',
         color: 'cyan',
         textDecorationLine: 'underline',
-    
-        
       
     },
     carGenre: {
         marginTop: 15,
         marginLeft: '53%',
-        color: 'cyan',
-        fontWeight: 'bold',
+        color: 'white',
+        fontFamily: 'playfaire'
     }
   
   })

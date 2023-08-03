@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import { Alert, Image, Modal, Pressable, StyleSheet, Text } from "react-native";
+import {  Image, StyleSheet, Text } from "react-native";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { navigate } from "../utils/RootNavigation";
+import { useFonts } from "expo-font";
 
 
 
 const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
     
+    let [Fontload] = useFonts({
+        'vidaloka': require('../assets/fonts/Vidaloka-Regular.ttf'),
+        'sacramento': require('../assets/fonts/Sacramento-Regular.ttf'),
+        'lobster': require('../assets/fonts/Lobster-Regular.ttf'),
+        'lobster2':require('../assets/fonts/LobsterTwo-Regular.ttf'),
+        'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
+        'dancing': require('../assets/fonts/DancingScript-Regular.ttf'),
+        'abril': require('../assets/fonts/AbrilFatface-Regular.ttf')
+    })
 
     return(
 
@@ -73,7 +83,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10,
         textAlign: 'center',
-        fontWeight: 'bold'
+        fontFamily: 'playfaire'
     },
     labelAnime: {
         color: 'white',
