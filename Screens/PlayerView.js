@@ -1,7 +1,7 @@
 import { ResizeMode, Video } from "expo-av";
 import React, { useEffect, useState } from "react";
 import { View,Text, StyleSheet, ActivityIndicator, Button, Alert} from "react-native";
-
+import LottieView from 'lottie-react-native';
 
 
 const PlayerView = ({route})=>{
@@ -29,9 +29,13 @@ const PlayerView = ({route})=>{
 
     if(loading){
         return<View style={styles.activityStyle}>
-            <ActivityIndicator size={"large"} color={"#00ff00"} />
-            <Text style={{color: 'white', fontWeight: 'bold', left:175}}>
-                Loading
+            <LottieView  style={styles.animStyle}
+                    autoPlay
+                    loop
+                    source={require('../assets/kakashi.json')}
+                /> 
+            <Text style={{color: 'white', top: 150, fontFamily: 'lobster2', fontSize: 25}}>
+                Loading...
             </Text>
         </View>
     }
@@ -87,8 +91,8 @@ const styles = StyleSheet.create({
    
     activityStyle:{
         flex: 1,
-        justifyContent: "center",
-        alignContent: "center",
+        alignItems: 'center',
+        alignContent: 'center',
         backgroundColor: '#181D31',
     },
     video:{
@@ -105,6 +109,12 @@ const styles = StyleSheet.create({
         marginRight: 20,
         top: -50
     },
+    animStyle: {
+        width: 300,
+        height: 300,
+        backgroundColor: '#181D31',
+        top: 100
+    }
 
 })
 
