@@ -2,7 +2,10 @@ import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { navigate } from "../utils/RootNavigation";
 
+
 const SearchPreview = ({id, title, link, picture, date, type}) =>{
+
+  
     return(
     <TouchableOpacity 
         onPress={()=>[

@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
 import AiringPreview from "../Preview/AiringPreview";
-import { useFonts } from "expo-font";
-
-
-
 
 
 let url = "https://api.consumet.org/anime/gogoanime/top-airing";
@@ -13,14 +9,7 @@ const Films = ()=>{
     let [isloading, setIsLoading] = useState(true)
     let [error, setError] = useState();
     let [response, setResponse] = useState([]);
-    let [Fontload] = useFonts({
-      'sacramento': require('../assets/fonts/Sacramento-Regular.ttf'),
-      'lobster': require('../assets/fonts/Lobster-Regular.ttf'),
-      'lobster2':require('../assets/fonts/LobsterTwo-Regular.ttf'),
-      'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
-      'dancing': require('../assets/fonts/DancingScript-Regular.ttf'),
-      'abril': require('../assets/fonts/AbrilFatface-Regular.ttf')
-  })
+   
 
     useEffect(()=> {
         fetch(url)
@@ -39,10 +28,6 @@ const Films = ()=>{
     }, []);
     
   const getFilm = () =>{
-
-
-
-    
     
         if(isloading){
             return<View>

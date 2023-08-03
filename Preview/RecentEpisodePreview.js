@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import {  Image, StyleSheet, Text } from "react-native";
 import { View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { navigate } from "../utils/RootNavigation";
-import { useFonts } from "expo-font";
+
 
 
 
 const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
     
-    let [Fontload] = useFonts({
-        'ultra': require('../assets/fonts/Ultra-Regular.ttf'),
-        'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
-        
-    })
-
+   
+   
     return(
 
         <TouchableOpacity 
@@ -27,7 +23,7 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
             )
         }}
         >
-            <View >
+            <View style={styles.container}>
                 <View style={styles.card}>
                     <View >
                         <Image style={styles.cardPic}
@@ -53,6 +49,12 @@ const RecentEpisodePreview = ({title, picture, url , episode, id})=>{
 }
 
 const styles = StyleSheet.create({
+
+    container:{
+        backgroundColor: 'blue',
+        justifyContent: 'center',
+        
+    },
     card:{
         marginTop: 10,
         marginLeft: 5,
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
         marginTop: -15,
         borderBottomLeftRadius: 20,
         textAlign: 'center',
-        fontFamily: 'ultra',
+        fontFamily: 'ultra'
     },
 
 })
