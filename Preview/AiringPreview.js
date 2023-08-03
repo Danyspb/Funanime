@@ -2,12 +2,22 @@
 import React from "react";
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { navigate } from "../utils/RootNavigation";
+import { useFonts } from "expo-font";
 
 
 const { width} = Dimensions.get('screen');
 
 
 const AiringPreview = ({title, image, genres, id }) =>{
+
+    let [Fontload] = useFonts({
+        'sacramento': require('../assets/fonts/Sacramento-Regular.ttf'),
+        'lobster': require('../assets/fonts/Lobster-Regular.ttf'),
+        'lobster2':require('../assets/fonts/LobsterTwo-Regular.ttf'),
+        'playfaire': require('../assets/fonts/PlayfairDisplay-Regular.ttf'),
+        'dancing': require('../assets/fonts/DancingScript-Regular.ttf'),
+        'abril': require('../assets/fonts/AbrilFatface-Regular.ttf')
+    })
 
     
     return(
@@ -23,13 +33,13 @@ const AiringPreview = ({title, image, genres, id }) =>{
                         style={styles.cardPic}
                         /> 
                         <Text style={styles.cardTitle}>
-                            <Text style={styles.type}>Title: </Text>
+                            <Text style={styles.type}>Title:{"\n"}</Text>
                         { 
                             title ? (title.length > 20 ? title.slice(0, 40) + "..." : title) : true
                          }
                         </Text>
                         <Text style={styles.carGenre}>
-                            <Text style={styles.type}>Genres: </Text>
+                            <Text style={styles.type}>Genres: {"\n"}</Text>
                             {
                                 genres +' '
                             }
@@ -59,14 +69,16 @@ const styles = StyleSheet.create({
     cardTitle:{
         marginLeft: '53%',
         marginTop: '-50%',
-        color: 'pink',
+        color: 'white',
         fontWeight: 'bold'
     },
     type: {
         fontSize: 20,
-        fontWeight: 'bold',
-        color: 'red',
-        textDecorationLine: 'underline'
+        fontFamily: 'lobster2',
+        color: 'cyan',
+        textDecorationLine: 'underline',
+    
+        
       
     },
     carGenre: {

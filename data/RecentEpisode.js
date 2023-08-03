@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
 import RecentEpisodePreview from "../Preview/RecentEpisodePreview";
+import { useFonts } from "expo-font";
 
 
 const url = 'https://api.consumet.org/anime/gogoanime/recent-episodes';
@@ -10,6 +11,7 @@ const RecentAnime = () =>{
     let [isloading, setIsloading] = useState(true);
     let [error, setError] = useState();
     let [response, setResponse] = useState([]);
+    let [Fontload] = useFonts({ 'abril': require('../assets/fonts/AbrilFatface-Regular.ttf')})
 
     useEffect(()=>{
         fetch(url)
@@ -68,12 +70,12 @@ const RecentAnime = () =>{
 const styles = StyleSheet.create({
     text: {
         color: 'white',
-        fontWeight: 'bold',
+        fontFamily: 'abril',
         fontSize: 20,
         marginLeft: 10,
         marginTop: 15,
         marginBottom: 15,
-        textDecorationLine: 'underline'
+        
       }
 })
 

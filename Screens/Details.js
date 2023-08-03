@@ -4,8 +4,6 @@ import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
 
 
-
-
 const Height = Dimensions.get('screen')
 
 
