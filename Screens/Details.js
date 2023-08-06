@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {  Image, ImageBackground, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { StyleSheet } from "react-native";
 import { navigate } from "../utils/RootNavigation";
 import LottieView from 'lottie-react-native';
@@ -62,7 +62,7 @@ const Details =(props)=>{
                         }
                     </Text>
                     <Text style={styles.genreStyles}>
-                        <Text style={{fontSize: 18, color: 'white'}}>Genres : </Text>
+                        <Text style={{fontSize: 18, color: 'white'}}>Genres : {"\n"}</Text>
                         {info.genres+ ''}
                     </Text>
                     <View style={styles.extraInfoContainer}>

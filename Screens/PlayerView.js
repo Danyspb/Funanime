@@ -1,6 +1,6 @@
 import { ResizeMode, Video } from "expo-av";
 import React, { useEffect, useState } from "react";
-import { View,Text, StyleSheet, ActivityIndicator, Button, Alert} from "react-native";
+import { View,Text, StyleSheet, Button} from "react-native";
 import LottieView from 'lottie-react-native';
 
 
