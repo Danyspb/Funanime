@@ -8,6 +8,8 @@ import Download from "../Screens/Download";
 import { Ionicons } from '@expo/vector-icons';
 import Details from "../Screens/Details";
 import PlayerView from "../Screens/PlayerView";
+import { Image, StyleSheet } from "react-native";
+
 
 
 
@@ -26,11 +28,13 @@ const BottomNav = () =>{
         }}>
             <Tab.Screen name="Home" component={Home} options={{
                 tabBarIcon: () =><Ionicons name="home" size={24} color="blue" />,
-                tabBarActiveBackgroundColor: "#E3ACF9",
-                headerStyle:{
-                    backgroundColor: 'blue',
+                tabBarActiveBackgroundColor: "#E3ACF9",    
                 
-                },
+                headerBackground:()=><Image 
+                    source={require('../assets/picture/Film.gif')} 
+                    style={styles.headerIm}
+                />
+    
 
             }}/>
             <Tab.Screen name="Favoris" component={Favoris} options={{
@@ -62,12 +66,14 @@ const BottomNav = () =>{
 }
 
 const MainNavigation = () =>{
+    
     return (
         <Stack.Navigator>
             <Stack.Screen name="Acceuil" component={BottomNav} options={{
                 headerShown: false,
                 
-                }} />
+                }}
+                 />
             <Stack.Screen name="Favoris" component={Favoris} options={{
                 headerShown: false,
                 
@@ -91,6 +97,14 @@ const MainNavigation = () =>{
         </Stack.Navigator>
     )
 }
+
+const styles = new StyleSheet.create({
+    headerIm :{
+        flex: 1,
+        width: '100%',
+        resizeMode: 'cover',
+    }
+})
 
 
 

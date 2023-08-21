@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
         fontFamily: 'lobster2',
         fontSize: 25,
         marginBottom: 200,
+        paddingBottom: 100,
         marginTop: 20,
     }
 
