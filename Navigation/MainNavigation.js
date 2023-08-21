@@ -40,9 +40,10 @@ const BottomNav = () =>{
             <Tab.Screen name="Favoris" component={Favoris} options={{
                 tabBarIcon: ()=><Ionicons name="star" size={24} color="gold" />,
                 tabBarActiveBackgroundColor: "#E3ACF9",
-                headerStyle:{
-                    backgroundColor: 'gold',
-                },
+                headerBackground: ()=><Image 
+                    source={require("../assets/picture/starts.json")}
+                    style={styles.headerIm}
+                />
                 
             }} />
             <Tab.Screen name="Search" component={Search}  options={{
